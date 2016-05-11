@@ -1,25 +1,12 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2016-05-11 10:54:20 -0400
+title: "Mapping Propagation of News and Opinion in the Twitter-sphere"
+date: "2016-05-11 10:54:20 -0400"
 categories: jekyll update
+published: true
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Study from Summer 2014 with fellow student-researcher (at time) Saumya Bhatt. We collected data over a week via the Twitter Streaming API and simaltaneously scraped news stories for prevailing trends at the time. We were able to study the propagation, virality and opinionation contrasts between traditional journalism and social-media broadcasted journalism.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+We observed difference in patterns which emphasized that local content discovery was much more agressive when aided by social streams. No surprises there! However, we identified two types of pollination patterns - uniform and oscillatory. While a uniform pattern resembles a ripple, with the news following an outward dissemination trend; the oscillatory pattern indicates a more random upwards trend in locations with none/limited geographic proximity to the point of origin. With the viral natur eof the internet, oscillating stories due to disproportionate dissemination is not uncommon but we were surprised to see the diffused effect of this trend in traditional media outlets as well. Intuition suggests the inter-play of Twitter virality assistance has somehow caused this oscillatory trend of stories to become increasingly dominant in traditional reported media as well. Just one of the ways social media has affected the norm.
 
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: http://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+All of our insights and observation were conducted on Tweets and new-stories on dedicated websites within the first 6 hours of reporting from point of birth. Our understanding of difference in sentiment and propagation has been summarized with the help of the above infographic.
