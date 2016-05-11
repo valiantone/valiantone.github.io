@@ -2,11 +2,15 @@
     <h1>{{ site.title }}</h1>
     <p>{{ site.description}}</p>
   
-          {% if site.github_username %}
-          {% include icon-github.html username=site.github_username %}
-          {% endif %}
+   	<p class = 'view'> 
+           {% if site.github_username %}
+           {% include icon-github.html username=site.github_username %}
+           {% endif %}
+  	</p>
 
+  	<p class = 'view'> 
           {% if site.twitter_username %}
           {% include icon-twitter.html username=site.twitter_username %}
           {% endif %}
+    </p>
 </header>
