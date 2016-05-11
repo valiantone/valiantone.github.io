@@ -4,16 +4,14 @@
   {% include head.html %}
 
   <body>
-    <div class="page-content">
-      <div class="wrapper">
-        {% include header.html %}
-        <section>
-          <div class="triger">
-            {{ content }}
-          </div>
-        </section>
-        {% include footer.html %}
-      </div>
+    <div class="wrapper">
+      {% include header.html %}
+      <section>
+        <div class="triger">
+          {{ content }}
+        </div>
+      </section>
+      {% include footer.html %}
     </div>
     <script src="{{ "/scripts/scale.fix.js" | prepend: site.baseurl }}"></script>
   </body>
