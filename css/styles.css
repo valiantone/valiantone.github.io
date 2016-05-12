@@ -80,6 +80,19 @@ a:hover small {
   margin:0 auto;
 }
 
+.icon {
+    > svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+
+        path {
+            fill: $grey-color;
+        }
+    }
+}
+
 blockquote {
   border-left:1px solid #e5e5e5;
   margin:0;
