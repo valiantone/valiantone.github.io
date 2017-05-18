@@ -4,8 +4,10 @@ title: "TeXifying your Jupyter Reports - Part 1"
 date: "2017-05-18 13:26:20 -0400"
 categories: jekyll update
 published: true
+excerpt_separator: <!--more-->
 ---
 The Jupyter project offers a host of great features; not only can you embed mathematical formulae in your cells with MathJax; you can convert the entirety of your notebook into simple and clean looking reports. With the `nbconvert` tool you can convert your notebooks into a whole suite of different formats - python, markdown and pdf.  
+<!--more-->
   
 However despite the functionality offered, converting to pdf can be a bit of a hassle due to dependency on `Latex`, a powerful tool that can convert a markup language into a document. In principle all it takes is a single command to run the directive for conversion however due to dependencies on the forementioned `latex` package and other graphical libraries, the command is most likely to throw up a world of different errors.  
   
