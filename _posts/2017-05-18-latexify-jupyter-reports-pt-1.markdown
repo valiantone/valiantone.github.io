@@ -44,7 +44,7 @@ This gets rid of the annoying Pandoc message hovever throws up a new error of it
 ```python
 OSError: xelatex not found on PATH, if you have not installed xelatex you may need to do so. Find further instructions at https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex.
 ```
-Now, this error is due to a permission setting that was introduced in El Capitan. Under El Caitan and later relases (Sierra) writing to `/usr` is no longer permitted. As a results the `/usr/textbin` path is removed - this causes complications since the symbolic link to the `pdlatex` is now missing. The fix for this is quite simple really, all you need to do is relocate the link to the new default location (`/Library/TeX/texbin`)for TeX and hence reconfigure the TeX applications to look for directives in this location. 
+Now, this error is due to a permission setting that was introduced in El Capitan. Under El Caitan and later releases (Sierra) writing to `/usr/` is no longer permitted. As a results the `/usr/textbin` path is removed - this causes complications since the symbolic link to `pdlatex` is now missing. The fix for this is quite simple really, all you need to do is relocate the link to the new default location (`/Library/TeX/texbin`)for TeX and hence reconfigure the TeX applications to look for directives in this location. 
   
 The following snippet by user [Moriambr](https://tex.stackexchange.com/users/89949/moriambar) [here](https://tex.stackexchange.com/questions/274179/mactex-error-xelatex-command-not-found) addresses the issue of correcting the link for the TeXLive utility which fixed the problem in our case.
 ~~~~
