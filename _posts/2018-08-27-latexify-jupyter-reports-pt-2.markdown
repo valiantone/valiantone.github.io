@@ -17,4 +17,4 @@ To ease you transition over to creating custom report formats, we offer a brief 
 + Creating new templates
 + Overriding parent templates for desired results
 +  Configuring Jupyter - a workspace for your templates
-+ From PDFs
++ From PDFs to other formats
