@@ -5,7 +5,7 @@ date: "2016-05-11 10:54:20 -0400"
 categories: jekyll update
 published: true
 ---
-Study from Summer 2014 with fellow student-researcher (at time) Saumya Bhatt. We collected data over a week via the Twitter Streaming API and simaltaneously scraped news stories for prevailing trends at the time. We were able to study the propagation, virality and opinionation contrasts between traditional journalism and social-media broadcasted journalism.
+> Study from Summer 2014 with fellow student-researcher (at time) Saumya Bhatt. We collected data over a week via the Twitter Streaming API and simaltaneously scraped news stories for prevailing trends at the time. We were able to study the propagation, virality and opinionation contrasts between traditional journalism and social-media broadcasted journalism.
 
 ![Infographic]({{site.baseurl}}/img/twittersphere.png)
 

@@ -6,7 +6,7 @@ categories: jekyll update
 published: true
 excerpt_separator: <!--more-->
 ---
-In the previous post, we demonstrated how to set-up and debug the `nbconvert` directive available as part of the Jupyter Project. In this follow-up we cover template driven report-generation that allow for simplistic reports delivered in your favorite format - HTML, PDF or Markdown!
+> In the previous post, we demonstrated how to set-up and debug the `nbconvert` directive available as part of the Jupyter Project. In this follow-up we cover template driven report-generation that allow for simplistic reports delivered in your favorite format - HTML, PDF or Markdown!
 <!--more-->
 ## The worst is behind us!
 If you've been following our post series on creating reports with _Jupyter's_ `nbconvert`, you've experienced the annoyance that is getting `nbconvert` up and running. Fortunately, if you've followed our walkthrough,  you not only have _LaTex_ configured on your machine but should have successfully generated a PDF report.
