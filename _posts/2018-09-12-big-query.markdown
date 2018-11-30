@@ -6,7 +6,7 @@ categories: jekyll update
 published: true
 excerpt_separator: <!--more-->
 ---
-_In this new post series on data science productivity through choice of tools: BigQuery is under the limelight as a transformative tool for an early-stage startups! In my first post I make a case for adopting BigQuery and advocate its widespread use across the organization, as an essential building-block towards a data intelligent culture._
+> In this new post series on data science productivity through choice of tools: BigQuery is under the limelight as a transformative tool for an early-stage startups! In my first post I make a case for adopting BigQuery and advocate its widespread use across the organization, as an essential building-block towards a data intelligent culture.
 <!--more-->
 
 As my own interests and responsibilities have started to align more towards institutionalizing data practices and infrastructure at lean, growth-mode organizations; I've been exploring better engineering tools and platforms for data science productivity. Growth focus, especially for maturing data teams, can sometimes be be a cacophonous experience - cloud platforms, analytics vendors, infrastructure, testing frameworks or science deployments all being worthwhile targets. With expectation management as a preliminary to data success: the first investment in technical real-estate for small data shops must always be analytics and decision-support.
