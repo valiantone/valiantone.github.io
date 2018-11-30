@@ -16,7 +16,7 @@ Towards this goal, _*data engineering*_ is almost always the first bottleneck on
 ![landscape]({{site.baseurl}}/img/analytics_landscape.png)
 > ©️ Matt Turck (@mattturck), Demi Obayami (@demi_obayami), & FirstMark(@firstmarkcap)
 
-<h6 style="text-align: center;">Figure | Current landscape of analytics vendors</h6>
+<h5 style="text-align: center;">Figure | Current landscape of analytics vendors</h5>
 
 ## Small Shop, Big Data
 Representative of majority; our use-case too begins with the story of a young organization learning to harness available data. At tech-enabled startups, company composition is usually a significantly large fraction of engineers, followed by product owners and analysts, with varying degrees of analytical abilities (I'm going to stack leadership in with this group), and finally an exclusive group of quants that straddle the line between advanced experimental modeling and engineering.
