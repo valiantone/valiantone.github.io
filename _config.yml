@@ -6,3 +6,4 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://thefuturelabs.co" # the base hostname & protocol for your site, e.g. http://example.com
 remote_theme: longpdo/neumorphism
 username: The Future Labs Co
+typing_text: A full-service software project studio, from design to deployment!
