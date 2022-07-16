@@ -7,11 +7,7 @@
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
+
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
@@ -19,19 +15,20 @@
 # in the templates via {{ site.myvariable }}.
 
 title: The Future Labs Company
-permalink: ':title:output_ext'
+description: 'Artificial Intelligence trends and concepts made easy.' # this means to ignore newlines until "baseurl:"
 url: "http://thefuturelabs.co" # the base hostname & protocol for your site, e.g. http://example.com
 remote_theme: broccolini/swiss
-theme_color: red
 username: The Future Labs Co
 typing_text: A full-service software project studio, from design to deployment!
 twitter_username: zubinj
 github_username:  valiantone
 
+# Set theme color here
+# Choose from: black (default), blue, gray, magenta, orange, red, white, and yellow.
+theme_color: red
+
 # Build settings
-theme: minima
-plugins:
-  - jekyll-feed
+markdown: kramdown
 
 # Exclude from processing.
 # The following items will not be processed, by default.
