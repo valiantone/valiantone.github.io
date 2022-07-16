@@ -16,7 +16,7 @@
 
 title: The Future Labs Company
 description: 'Artificial Intelligence trends and concepts made easy.' # this means to ignore newlines until "baseurl:"
-url: "http://thefuturelabs.co" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://thefuturelabs.co"
 remote_theme: broccolini/swiss
 username: The Future Labs Co
 typing_text: A full-service software project studio, from design to deployment!
