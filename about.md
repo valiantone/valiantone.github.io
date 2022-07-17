@@ -1,18 +1,3 @@
----
-layout: page
-title: About
-permalink: /about/
----
+Greetings wanderer! We are a full-service (design through deployment) hobby software studio based out of Berlin. Our raison d'être: collaborating on community-focussed and social-design projects with kindrer spirits. Currently, the two of us are engaged in a enteprise role and volunteering, respectively, and not actively seeking new opportunities. However, please don't let that discourage you from setting up a coffee/beer chat!
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+Our blog features a variety of topics ranging from career to code, data to design.
