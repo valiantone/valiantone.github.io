@@ -1,54 +1,117 @@
-# Astro Starter Kit: Basics
+# Brutal - The neobrutalist Astro theme
 
-```sh
-npm create astro@latest -- --template basics
+Brutal is a minimal neobrutalist theme for [Astro](https://astro.build/). It's based on Neobrutalist Web Design, a movement that aims to create websites with a minimalistic and functional design. It has some integrations like Image Optimization, RSS, Sitemap, ready to get your SEO done right.
+
+The theme has no JavaScript integration out of the box, but can always be added of course.
+
+This template is based on [my own personal website](<https://www.elian.codes/>), with some more generic things added.
+
+## Usage
+
+You can bootstrap a new Astro project using Brutal with the following command:
+
+```bash
+# npm 6.x
+npx create astro@latest --template eliancodes/brutal
+
+# npm 7+
+npx create astro@latest -- --template eliancodes/brutal
+
+# pnpm
+pnpm dlx create-astro --template eliancodes/brutal
+
+# yarn
+yarn create astro --template eliancodes/brutal
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
+### Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+(Here I use PNPM, no problem if you use NPM or Yarn)
 
-## 👀 Want to learn more?
+| Command             | Action                                             |
+| :------------------ | :------------------------------------------------- |
+| `pnpm install`      | Installs dependencies                              |
+| `pnpm dev`          | Starts local dev server at `localhost:3000`        |
+| `pnpm build`        | Build your production site to `./dist/`            |
+| `pnpm preview`      | Preview your build locally, before deploying       |
+| `pnpm astro ...`    | Run CLI commands like `astro add`, `astro preview` |
+| `pnpm astro --help` | Get help using the Astro CLI                       |
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Integrations
+
+### UnoCSS
+
+In this theme, I'm using [UnoCSS](https://uno.antfu.me/) to generate the CSS. It's a utility-first CSS framework that uses a single class to style elements. It's very easy to use and has a lot of features. It's setup to be completely compatible with TailwindCSS, with the advantage of being able to use PureCSS icons. You can always switch out UnoCSS for TailwindCSS if you want to, without breaking the general styles.
+
+### Sitemap
+
+To generate the sitemap, you don't need to do anything. It's automatically generated when you build your site. You'll just need to switch out the `site` on `astro.config.mjs` to your own.
+
+```js title="astro.config.mjs"
+import { defineConfig } from 'astro/config';
+
+export default defineConfig({
+  site: 'https://example.com',
+});
+```
+
+### RSS
+
+The RSS feed is automatically generated from the Markdown files in the `src/content/blog` folder. You can ofcourse completely change this to your own needs.
+
+The RSS will output to `https://example.com/feed.xml` by default. You can change this, by renaming `src/pages/feed.xml.js`.
+
+### Image
+
+## Components
+
+### `components/blog/`
+
+This directory contains all components for the blog.
+
+### `components/errors/`
+
+This directory contains all error components.
+
+#### `components/errors/404.astro`
+
+This component is used when a page is not found.
+
+### `components/generic/`
+
+This directory contains all generic components, reused over multiple pages.
+
+### `components/home/`
+
+This directory contains all components for the home page.
+
+### `components/layout/`
+
+This directory contains all layout components. For instance, the header and footer and `<head>` section.
+
+### Colors
+
+The theme has a few colors that you can use in the included components.
+
+- red
+- blue
+- green
+- yellow
+- pink
+- purple
+- orange
+- teal
+- cyan
+- lime
+- emerald
+- fuchsia
+- violet
+- rose
+- sky
+- amber
+
+More colors can be added in `astro.config.mjs` in the `colors` array.
+
+If you need more from this theme, don't hesitate to open an issue or reach out to me!
