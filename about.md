@@ -1,3 +1,0 @@
-Greetings wanderer! We are a full-service (design through deployment) hobby software studio based out of Berlin. Our raison d'être: collaborating on community-focussed and social-design projects with kindrer spirits. Currently, the two of us are engaged in a enteprise role and volunteering, respectively, and not actively seeking new opportunities. However, please don't let that discourage you from setting up a coffee/beer chat!
-
-Our blog features a variety of topics ranging from career to code, data to design.
