@@ -3,7 +3,7 @@ import type { Site, SocialObjects } from "./types";
 export const SITE: Site = {
   website: "https://valiantone.github.io", // replace this with your deployed domain
   author: "Zubin J",
-  desc: "A blog featuring na variety of digital fundamentals ranging from career to code, data to design.",
+  desc: "A blog featuring a variety of digital fundamentals ranging from career to code, data to design.",
   title: "Frequent Bayesianism",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
