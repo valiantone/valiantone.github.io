@@ -3,10 +3,9 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-AstroPaper is a minimal, responsive and SEO-friendly Astro blog theme. I designed and crafted this based on [my personal blog](https://satnaing.dev/blog).
+Frequent Bayesianism is a cheeky, made up term that invokes an outdated, ideological debate in the field of probability and data science. With little meaning it serves as great name for a personal publication.
 
-This theme is aimed to be accessible out of the box. Light and dark mode are supported by
-default and additional color schemes can also be configured.
+This blog features a variety of digital fundamentals ranging from career to code, data to design.
 
 This theme is self-documented \_ which means articles/posts in this theme can also be considered as documentations. So, see the documentation for more info.
 
