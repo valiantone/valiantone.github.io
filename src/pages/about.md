@@ -38,9 +38,10 @@ We cover a breadth of different topics on this blog.
   - Machine Learning
 
 - Digital Learning
-- EduTech Tools
-- Online Resources
-- Open Coursework
+
+  - EduTech Tools
+  - Online Resources
+  - Open Coursework
 
 - Volunteering & Community Projects
 
