@@ -2,7 +2,7 @@
 title: Introducing Marimo Notebooks
 pubDatetime: 2023-12-11T23:00:00Z
 postSlug: marimo-notebooks
-featured: false
+featured: true
 draft: false
 tags:
   - data-science
