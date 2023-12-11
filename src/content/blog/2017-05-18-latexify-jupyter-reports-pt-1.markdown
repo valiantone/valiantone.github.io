@@ -6,7 +6,7 @@ postSlug: latexify-jupyter-reports
 featured: true
 draft: false
 tags:
-  - data science, tools
+  - data-science, tools
 description:
   Turn your Jupyter notebooks in to beautiful PDF reports!
 ---

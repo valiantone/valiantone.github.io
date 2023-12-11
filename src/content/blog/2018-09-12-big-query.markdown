@@ -6,7 +6,7 @@ postSlug: empowering-big-query
 featured: true
 draft: false
 tags:
-  - databases, big data
+  - databases, big-data
 description:
   How BigQuery can transform your analytics shop!
 ---
