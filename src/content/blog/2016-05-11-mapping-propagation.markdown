@@ -6,7 +6,9 @@ postSlug: mapping-propagation
 featured: true
 draft: false
 tags:
-  - data-science, analysis, data-mining
+  - data-science
+  - analysis
+  - data-mining
 description:
   A study on how news stories propagate across traditional media sources vs. Twitter
 ---

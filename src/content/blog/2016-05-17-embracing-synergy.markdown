@@ -6,7 +6,8 @@ postSlug: embracing-synergy
 featured: true
 draft: false
 tags:
-  - ux, tools
+  - ux
+  - tools
 description:
   When worlds collide, quantitative data meets qualitative user research.
 ---
