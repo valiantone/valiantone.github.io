@@ -18,7 +18,7 @@ As my own interests and responsibilities have started to align more towards inst
 
 Towards this goal, _data engineering_ is almost always the first bottleneck one should consider prioritizing. The right choice of analytics vendor and engineering infrastructure, can go a long way towards alleviating grave concerns and issues further down the growth cycle. There are tonnes of options out there, from choice of analytics providers to date-warehousing stores to ETL pipelines that move all your data! A good number of factors set the Google Cloud Platform apart from market competition. For our team: its pervasive utility, expansive suite of ancillary tools and ready integrations with a host of popular existing DS tools and technologies lead to enthusiastic adoption. In this post, adhering to the philosophy of minimizing technical debt - I make a case for Google BigQuery as the sustainable tool of choice for a rapidly-growing data shop.
 
-![landscape]({{site.baseurl}}/img/analytics_landscape.png)
+![landscape](/assets/images/analytics_landscape.png)
 > ©️ Matt Turck (@mattturck), Demi Obayami (@demi_obayami), & FirstMark(@firstmarkcap)
 
 <h5 style="text-align: center;">Figure | Current landscape of analytics vendors</h5>
