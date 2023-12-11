@@ -6,7 +6,7 @@ featured: false
 draft: false
 tags:
   - ux
-  - tools
+  - data-science
 description: When worlds collide, quantitative data meets qualitative user research.
 ---
 
