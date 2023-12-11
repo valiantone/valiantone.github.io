@@ -1,6 +1,6 @@
 ---
 title: Making a Case for Embracing Synergy - Data Analytics and User Research
-pubDatetime: 2016-05-17T10:54::00Z
+pubDatetime: 2016-05-17T10:54:00Z
 postSlug: embracing-synergy
 featured: false
 draft: false

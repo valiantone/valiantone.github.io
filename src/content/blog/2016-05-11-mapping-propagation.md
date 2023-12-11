@@ -1,6 +1,6 @@
 ---
 title: Mapping Propagation of News and Opinion in the Twitter-sphere
-pubDatetime: 2016-05-11T10:54::00Z
+pubDatetime: 2016-05-11T10:54:00Z
 postSlug: mapping-propagation
 featured: false
 draft: false
