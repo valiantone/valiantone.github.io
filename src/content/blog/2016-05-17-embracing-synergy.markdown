@@ -3,7 +3,7 @@ title: Making a Case for Embracing Synergy - Data Analytics and User Research
 author: Zubin J
 pubDatetime: 2016-05-17T10:54::00Z
 postSlug: embracing-synergy
-featured: true
+featured: false
 draft: false
 tags:
   - ux

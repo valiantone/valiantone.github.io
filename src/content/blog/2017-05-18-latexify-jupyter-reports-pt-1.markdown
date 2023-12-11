@@ -3,7 +3,7 @@ title: TeXifying your Jupyter Reports
 author: Zubin J
 pubDatetime: 2017-05-08T12:05:00Z
 postSlug: latexify-jupyter-reports
-featured: true
+featured: false
 draft: false
 tags:
   - data-science
@@ -25,9 +25,9 @@ In part 1 of this series we walk through the installation and setup guide to get
 First let's do a quick whirlwind tour of all the possible errors. The conversion module can be kicked off with the following directive.
 
 
-~~~~
+```
 jupyter nbconvert --to PDF path/to/example.ipynb
-~~~~
+```
 
 So let's run that and see what we have..
 

@@ -3,7 +3,7 @@ author: Zubin J
 pubDatetime: 2018-09-12T15:22:00Z
 title: Empowering your Engineering Organization with BigQuery
 postSlug: empowering-big-query
-featured: true
+featured: false
 draft: false
 tags:
   - databases
