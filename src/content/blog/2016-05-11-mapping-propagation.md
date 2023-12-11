@@ -1,6 +1,5 @@
 ---
 title: Mapping Propagation of News and Opinion in the Twitter-sphere
-author: Zubin J
 pubDatetime: 2016-05-11T10:54::00Z
 postSlug: mapping-propagation
 featured: false
@@ -9,13 +8,12 @@ tags:
   - data-science
   - analysis
   - data-mining
-description:
-  A study on how news stories propagate across traditional media sources vs. Twitter
+description: A study on how news stories propagate across traditional media sources vs. Twitter
 ---
 
 > Study from Summer 2014 with fellow student-researcher (at time) Saumya Bhatt. We collected data over a week via the Twitter Streaming API and simultaneously scraped news stories for prevailing trends at the time. We were able to study the propagation, virality and opinionation contrasts between traditional journalism and social-media broadcasted journalism.
 
-![Infographic](/assets/images/twittersphere.png)
+![Infographic](@assets/images/twittersphere.png)
 
 We observed difference in patterns which emphasized that local content discovery was much more aggressive when aided by social streams. No surprises there! However, we identified two types of pollination patterns - uniform and oscillatory. While a uniform pattern resembles a ripple, with the news following an outward dissemination trend; the oscillatory pattern indicates a more random upwards trend in locations with none/limited geographic proximity to the point of origin. With the viral natur eof the internet, oscillating stories due to disproportionate dissemination is not uncommon but we were surprised to see the diffused effect of this trend in traditional media outlets as well. Intuition suggests the inter-play of Twitter virality assistance has somehow caused this oscillatory trend of stories to become increasingly dominant in traditional reported media as well. Just one of the ways social media has affected the norm.
 
