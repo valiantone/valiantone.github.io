@@ -18,7 +18,7 @@ description: The next generation python notebooks where every program is also an
 
 Alright, folks, let’s address the elephant in the room – Jupyter’s quirks and quibbles. While Jupyter Notebooks have revolutionized data science, they aren’t without their flaws. Here are some of the most documented gripes:
 
-1. **Hidden State Issues**:\*\* The order of cell execution can lead to inconsistencies and bugs. Running cells out of order? Good luck keeping track of that.
+1. **Hidden State Issues**: The order of cell execution can lead to inconsistencies and bugs. Running cells out of order? Good luck keeping track of that.
 2. **Version Control Nightmares:** Storing notebooks as JSON files is a version control nightmare. Diffing and merging? Not so fun.
 3. **Manual Updates Required:** Changes in one part of a notebook don’t propagate automatically. Manually re-executing dependent cells is a recipe for errors.
 4. **Performance and Scalability:** Jupyter can lag with large datasets or complex computations. Plus, running a server can be a hassle in resource-constrained environments.
@@ -97,11 +97,11 @@ csv_data = """#,Name,Type 1,Type 2,Total,HP,Attack,Defense,Sp. Atk,Sp. Def,Speed
 18,Pidgeot,Normal,Flying,479,83,80,75,70,70,101,1,False
 18,PidgeotMega Pidgeot,Normal,Flying,579,83,80,80,135,80,121,1,False
 19,Rattata,Normal,,253,30,56,35,25,35,72,1,False
-20,Raticate,Normal,,413,55,81,60,50,70,97,1,False
-
+20,Raticate,Normal,,413,55,81,60,50,70,97,1,False"""
 
 # Create the Marimo app
 app = marimo.App(width="full")
+
 
 @app.cell
 def __(mo, plot):
@@ -158,19 +158,6 @@ if __name__ == "__main__":
     app.run()
 ```
 
-```python
-    )
-    plot = mo.ui.plotly(fig)
-    return plot
-
-@app.cell
-def __():
-    return
-
-if __name__ == "__main__":
-    app.run()
-```
-
 ### Explanation:
 
 - **CSV Data:** We initialize Pokémon data as a multiline string and load it into a pandas DataFrame.
@@ -194,12 +181,17 @@ Deploying Marimo notebooks as web apps is not just easy, it's downright magical.
 
 #### Verdict (as of July 9, 2024):
 
-While the idea of reactive, interactive notebooks that can be deployed as scripts, notebooks, or apps is still a noble one, the Marimo project falls short by a large margin. The project is plagued with issues, poor maintenance, and a lack of a vocal community. The maintainers have done an abysmal job of keeping the project functional. As of today, not a single example actually works without the package or the service breaking. It's surprising that in 2024, despite daily active contributions, none of the maintainers can comment on why even a simple "Hello World" example does not exist. Reviewing the issues on GitHub reveals a pattern of neglect, with users frequently encountering the "kernel not found" error right out of the box. We can only wait and see if the maintainers have enough faith in their own project to bring it back to life and fix these small yet critical issues.
+While the idea of reactive, interactive notebooks that can be deployed as scripts, notebooks, or apps is still a noble one, the Marimo project has its fair share of quirks and bumps in the road. Think of it as a charmingly eccentric inventor’s workshop – full of potential but a bit chaotic.
+
+As of today, getting even a simple example to run without hiccups is like trying to catch a rare Pokémon with a basic Poké Ball – frustratingly elusive. It’s curious that in 2024, with daily active contributions, there isn’t a “Hello World” that just works out of the box. Despite my best efforts, I can’t find any mention of the “kernel not found” error that I seem to be getting right after a simple install (pip).
+
+But let’s not lose hope just yet! Maybe the maintainers are gearing up for a grand comeback. Perhaps they’re planning to sprinkle some magic dust and bring Marimo to life in ways we’ve only dreamed of. Until then, we wait with a mix of anticipation and amusement, hoping that soon we’ll see Marimo living up to its full potential. Stay tuned, keep those fingers crossed, and enjoy the ride!
 
 ### References:
 
 Explore more about Marimo and its features from these resources:
 
+- [marimo: a reactive Python notebook that runs in the browser](https://blog.pyodide.org/posts/marimo/)
 - [[P] I built marimo — an open-source reactive Python notebook that’s stored as a .py file, executable as a script, and deployable as an app.](https://www.reddit.com/r/MachineLearning/comments/191rdwq/p_i_built_marimo_an_opensource_reactive_python/)
 - [Can Marimo replace Jupyter notebooks?](https://medium.com/@flyingjony/can-marimo-replace-jupyter-notebooks-fb8c7210ad35)
 - [made with marimo](https://marimo.io/use-cases)
