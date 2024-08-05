@@ -49,49 +49,112 @@ There are several tools in the ecosystem that offer orchestration capabilities, 
 
 ### Conclusion
 
-In conclusion, the complexities of AI workflows necessitate a shift from traditional data workflow management to modern AI orchestration. By embracing the efficiency, scalability, ease of use, and agility offered by contemporary orchestration platforms, organizations can optimize their AI pipeline management, ultimately driving innovation and competitive advantage. As the field of AI continues to advance, the importance of robust orchestration solutions will only grow, making it a critical component of modern AI infrastructure.
+The complexities of AI workflows necessitate a shift from traditional data workflow management to modern AI orchestration. By embracing the efficiency, scalability, ease of use, and agility offered by contemporary orchestration platforms, organizations can optimize their AI pipeline management, ultimately driving innovation and competitive advantage. As the field of AI continues to advance, the importance of robust orchestration solutions will only grow, making it a critical component of modern AI infrastructure.
 
 Modern orchestration is not just about managing tasks; it's about unifying teams and technology stacks, providing autonomy and control, and fostering collaboration. This holistic approach empowers organizations to harness the full potential of AI, paving the way for future advancements and success.
 
 ## Putting Theory to Practice
 
-Here are some mini-courses that provide introductions to working with tools like Apache Airflow, Mage, and Prefect:
+Bored with reading more of the theory? Now it’s time to get your hands dirty. In this section, we’re going to introduce you to some learning content for three of the most popular tools for modern data orchestration: Apache Airflow, Mage, and Prefect. Each tool has its unique strengths, and we’ve curated some excellent YouTube lessons to get you started. Pick one that resonates with you and dive in!
 
-#### Apache Airflow
+#### Why Airflow?
 
-1. **DataCamp - Introduction to Airflow in Python**
+Apache Airflow is a powerful and widely-used orchestration tool that’s perfect for managing complex workflows. Whether you’re handling data engineering tasks or machine learning pipelines, Airflow’s DAG (Directed Acyclic Graph) approach allows for robust and dynamic workflow management.
 
-   - This course provides a comprehensive introduction to Apache Airflow, including components like Directed Acyclic Graphs (DAGs) and how to implement data engineering workflows.
-   - Duration: 4 hours
-   - [Introduction to Airflow in Python on DataCamp](https://www.datacamp.com/courses/introduction-to-airflow-in-python) [oai_citation:1,Introduction to Airflow in Python Course | DataCamp](https://www.datacamp.com/courses/introduction-to-airflow-in-python).
+- ##### Apache Airflow Tutorial for Data Engineers
 
-2. **Udacity - Introduction to Airflow**
+  > This tutorial provides a comprehensive introduction to Apache Airflow, covering key concepts and practical applications for data engineers.
 
-   - This course covers the basics of Apache Airflow, including creating DAGs and automating data pipelines.
-   - Duration: 4 weeks
-   - [Introduction to Airflow on Udacity](https://www.udacity.com/course/introduction-to-airflow--nd008) [oai_citation:2,Introduction To Apache Airflow Training Course | Udacity](https://www.udacity.com/course/introduction-to-airflow--cd12932).
+  [Watch the tutorial](https://www.youtube.com/live/y5rYZLBZ_Fw?app=desktop)
 
-3. **Astronomer Academy - Free Airflow Courses**
-   - Astronomer offers free courses taught by experts behind Apache Airflow, focusing on best practices for creating scalable and reliable data pipelines.
-   - [Astronomer Academy](https://academy.astronomer.io/) [oai_citation:3,Introduction to Airflow in Python Course | DataCamp](https://www.datacamp.com/courses/introduction-to-airflow-in-python).
+#### Why Mage?
 
-#### Mage
+Mage is a newer tool in the orchestration space but offers a streamlined and intuitive approach to building and managing data pipelines. It’s designed to be user-friendly, making it an excellent choice for those new to data engineering.
 
-Mage is a relatively newer tool focused on simplifying data engineering, and while there are fewer dedicated courses, here are some resources to get started:
+- ##### Data Talks Club - Mage Tutorial
 
-1. **Mage Official Documentation and Tutorials**
-   - The official Mage website offers tutorials and documentation to help new users get started with building and managing data pipelines.
-   - [Mage Documentation](https://www.mage.ai/docs) [oai_citation:4,Introduction to Airflow in Python Course | DataCamp](https://www.datacamp.com/courses/introduction-to-airflow-in-python).
+  > This video provides a detailed tutorial on setting up and using Mage for data pipeline management.
 
-#### Prefect
+  [Watch the tutorial](https://www.youtube.com/watch?v=JKALtxziBG0)
 
-1. **Prefect - Getting Started with Prefect**
+#### Why Prefect?
 
-   - Prefect’s official website provides a comprehensive "Getting Started" guide, which includes tutorials on setting up workflows, creating tasks, and more.
-   - [Prefect Getting Started](https://docs.prefect.io/core/getting_started/overview.html) [oai_citation:5,Introduction to Airflow in Python Course | DataCamp](https://www.datacamp.com/courses/introduction-to-airflow-in-python).
+Prefect is designed to handle the complexities of modern data workflows with ease. It focuses on providing a robust and flexible framework that can be easily integrated with existing systems, making it a favorite among data scientists and engineers.
 
-2. **DataCamp - Prefect Introduction**
-   - DataCamp also offers resources and courses that include introductions to Prefect, focusing on its use in modern data engineering workflows.
-   - [DataCamp Prefect Courses](https://www.datacamp.com/) (search for Prefect-related courses) [oai_citation:6,Introduction to Airflow in Python Course | DataCamp](https://www.datacamp.com/courses/introduction-to-airflow-in-python).
+- ##### Getting Started with Prefect
 
-These courses and resources should provide a solid foundation for understanding and using Apache Airflow, Mage, and Prefect in your data engineering and AI orchestration workflows.
+  > This tutorial provides a comprehensive introduction to Prefect, covering its core concepts and functionalities.
+
+  [Watch the tutorial](https://www.youtube.com/watch?v=D5DhwVNHWeU)
+
+#### That's a Wrap!
+
+We’ve introduced you to three powerful tools for modern data orchestration: Apache Airflow, Mage, and Prefect. Each tool has its unique strengths, and the YouTube lessons provided offer an excellent overview to get you started. Your task, should you choose to accept it, is to pick one of these tools and familiarize yourself with it using the corresponding video lesson provided. Once you have a basic command of the tool, you can proceed to the next section, where we will walk you through a mini-project. This project will help you understand an end-to-end example of what modern AI orchestration can help us achieve.
+
+### The Fun Part: Your Assignment
+
+Alright, now that you’ve picked a tool and familiarized yourself with the basics, it’s time to put your knowledge into action with a mini-project that will challenge and hone your new skills. Get ready to become a data orchestration pro!
+
+**The Project:** Taxi vs. Uber Cost Predictor
+
+**Objective:** Build an ETL pipeline that ingests, processes, stores, and serves NYC taxi trip data. Your goal is to train a model that predicts whether a taxi or Uber would be cheaper for a given trip request.
+
+#### Setting Up the Datasets
+
+1. **NYC Taxi Data**:
+   - [NYC Taxi & Limousine Commission (TLC) Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+   - This dataset includes information about taxi trips in New York City, such as pickup and dropoff dates/times, locations, trip distances, and fares.
+2. **Uber Data**:
+   - [Uber Data from NYC Open Data](https://data.cityofnewyork.us/Transportation/uber-Data/gre9-vvjv/about_data)
+   - This dataset includes Uber trip details in New York City, such as pickup and dropoff dates/times, locations, and fare amounts.
+
+#### Project Steps
+
+1. Ingest Data:
+   - Use your chosen tool to create an ETL pipeline that ingests NYC Taxi data and Uber data.
+   - Schedule regular updates to keep the data current.
+   - You will need to synchronize the time between the two datasets to ensure uniform data from the same period in your training and inference code.
+2. Process Data:
+   - Clean the data by handling missing values and outliers.
+   - Transform the data to calculate trip distances, times, and fare amounts. Include additional features like time of day and day of the week.
+3. Store Data:
+   - Set up a database (PostgreSQL, Redshift, BigQuery, etc.) to store raw and processed data.
+   - Load the cleaned and transformed data into the database.
+4. Serve Data:
+   - Develop an API to serve the data. This API should accept trip details (time, source, destination) and return the predicted cheaper option (taxi or Uber).
+5. Train the Model:
+   - Use historical fare data to train a machine learning model (e.g., a regression model) to predict fares for taxis and Uber.
+   - Evaluate the model’s performance using metrics like Mean Absolute Error (MAE).
+6. Deploy the Model:
+   - Integrate the model with your API to provide real-time fare predictions.
+
+#### Running the Project Locally
+
+For this project, focus on running your ETL pipeline and model locally. This approach simplifies the setup and allows you to iterate quickly without worrying about deployment complexities. Here’s a quick guide:
+
+1. Set Up Your Environment:
+   - Ensure you have all necessary dependencies installed (Python, your chosen orchestration tool, database drivers, etc.).
+2. Develop and Test:
+   - Build each part of your pipeline incrementally, testing thoroughly as you go.
+   - Use local datasets and configurations to validate your ETL processes and model predictions.
+3. Iterate and Improve:
+   - Continuously refine your pipeline and model based on feedback and performance metrics.
+   - Experiment with different features and model parameters to improve accuracy.
+
+### Simple, Right?
+
+Okay, maybe not simple, but definitely fun and incredibly useful. You’ll be combining your newfound skills in orchestration with real-world data to create something genuinely valuable. Plus, you get to say you’ve built an end-to-end data pipeline. How cool is that?
+
+Once you’ve completed the project, you’ll have a robust understanding of how to set up and manage complex data workflows. And who knows? Maybe your model will help people save money on their next ride!
+
+Ready, set, go! Dive into the resources, get familiar with your chosen tool, and start building your pipeline. Happy coding! 🚀
+
+## Additional Resources
+
+For those eager students who have quickly digested our material and are hungry for more advanced, detailed resources to understand orchestration and its advanced use cases, we’ve collected some fantastic additional material. Happy learning! 🌻
+
+- ##### Astronomer Academy - Free Airflow Courses
+
+  > Astronomer offers free courses taught by experts behind Apache Airflow, focusing on best practices for creating scalable and reliable data pipelines. Whether you want to deep dive into complex DAG structures or explore best practices for deployment and monitoring, these resources will guide you through advanced scenarios and real-world applications.
+
+  [Astronomer Academy](https://www.youtube.com/live/y5rYZLBZ_Fw?app=desktop)
