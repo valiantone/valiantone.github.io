@@ -10,7 +10,7 @@ tags:
   - ai-orchestration
   - workflows
   - elt
-description: The next generation python notebooks where every program is also an interactive web-app
+description: Master modern AI orchestration with a hands-on project and step-by-step guidance using Apache Airflow, Mage, or Prefect!
 ---
 
 > In the rapidly evolving landscape of technology, treating AI and data workflows the same is a significant oversight that can hinder progress. Many organizations have discovered that the requirements for AI pipelines are far more complex than traditional ETL (Extract, Transform, Load) pipelines. This realization has paved the way for modern AI orchestration, which is designed to meet the demands of today’s sophisticated workloads.
@@ -55,11 +55,7 @@ Modern orchestration is not just about managing tasks; it's about unifying teams
 
 ## Putting Theory to Practice
 
-Bored with reading more of the theory? Now it’s time to get your hands dirty. In this section, we’re going to introduce you to some learning content for three of the most popular tools for modern data orchestration: Apache Airflow, Mage, and Prefect. Each tool has its unique strengths, and we’ve curated some excellent YouTube lessons to get you started. Pick one that resonates with you and dive in!
-
-#### Why Airflow?
-
-Apache Airflow is a powerful and widely-used orchestration tool that’s perfect for managing complex workflows. Whether you’re handling data engineering tasks or machine learning pipelines, Airflow’s DAG (Directed Acyclic Graph) approach allows for robust and dynamic workflow management.
+Bored with reading more of the theory? Now it’s time to get your hands dirty. In this section, we’re going to introduce you to some learning content for three of the most popular tools for modern data orchestration: Apache Airflow, Mage, and Prefect. Each tool has its unique strengths, and we’ve curated some excellent YouTube lessons to get you started. **Pick one** that resonates with you and dive in!
 
 - ##### Apache Airflow Tutorial for Data Engineers
 
@@ -67,19 +63,11 @@ Apache Airflow is a powerful and widely-used orchestration tool that’s perfect
 
   [Watch the tutorial](https://www.youtube.com/live/y5rYZLBZ_Fw?app=desktop)
 
-#### Why Mage?
-
-Mage is a newer tool in the orchestration space but offers a streamlined and intuitive approach to building and managing data pipelines. It’s designed to be user-friendly, making it an excellent choice for those new to data engineering.
-
 - ##### Data Talks Club - Mage Tutorial
 
   > This video provides a detailed tutorial on setting up and using Mage for data pipeline management.
 
   [Watch the tutorial](https://www.youtube.com/watch?v=JKALtxziBG0)
-
-#### Why Prefect?
-
-Prefect is designed to handle the complexities of modern data workflows with ease. It focuses on providing a robust and flexible framework that can be easily integrated with existing systems, making it a favorite among data scientists and engineers.
 
 - ##### Getting Started with Prefect
 
