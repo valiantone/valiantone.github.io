@@ -23,7 +23,7 @@ Modern AI orchestration is the process of coordinating and managing the various 
 
 #### Critical Aspects of Modern Orchestration
 
-For modern orchestration, I believe it's absolutely critical to enable and seamlessly unify teams and technology stacks, fostering collaboration among data scientists, ML engineers, and application developers. The integration of diverse expertise and tools is essential for creating robust AI solutions. By bridging gaps between different roles, modern orchestration ensures that all team members can contribute effectively to the workflow, enhancing overall productivity and innovation.
+For modern orchestration, I believe it's absolutely critical to enable and seamlessly unify teams and technology stacks, fostering collaboration among **data scientists**, **ML engineers**, and **application developers**. The integration of diverse expertise and tools is essential for creating robust AI solutions. By bridging gaps between different roles, modern orchestration ensures that all team members can contribute effectively to the workflow, enhancing overall productivity and innovation.
 
 In my experience, developers working on these applications are going to need autonomy and control over all three of these functional roles. It may even require one person to wear multiple hats. The flexibility to switch between roles and responsibilities allows for more agile and responsive development processes. This multifaceted approach ensures that developers can address various challenges efficiently, from data preprocessing to model deployment and application integration.
 
@@ -77,7 +77,7 @@ Bored with reading more of the theory? Now it’s time to get your hands dirty. 
 
 #### That's a Wrap!
 
-We’ve introduced you to three powerful tools for modern data orchestration: Apache Airflow, Mage, and Prefect. Each tool has its unique strengths, and the YouTube lessons provided offer an excellent overview to get you started. Your task, should you choose to accept it, is to pick one of these tools and familiarize yourself with it using the corresponding video lesson provided. Once you have a basic command of the tool, you can proceed to the next section, where we will walk you through a mini-project. This project will help you understand an end-to-end example of what modern AI orchestration can help us achieve.
+We’ve introduced you to three powerful tools for modern data orchestration: Apache Airflow, Mage, and Prefect. Each tool has its unique strengths, and the YouTube lessons provided offer an excellent overview to get you started. **Your task, should you choose to accept it, is to pick one of these tools and familiarize yourself with it using the corresponding video lesson provided. Once you have a basic command of the tool, you can proceed to the next section, where we will walk you through a mini-project.** This project will help you understand an end-to-end example of what modern AI orchestration can help us achieve.
 
 ### The Fun Part: Your Assignment
 
