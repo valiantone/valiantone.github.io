@@ -181,11 +181,11 @@ Deploying Marimo notebooks as web apps is not just easy, it's downright magical.
 
 #### Verdict (as of July 9, 2024):
 
-While the idea of reactive, interactive notebooks that can be deployed as scripts, notebooks, or apps is still a noble one, the Marimo project has its fair share of quirks and bumps in the road. Think of it as a charmingly eccentric inventor’s workshop – full of potential but a bit chaotic.
+Updating Marimo to the latest release was like trying to organize a whimsical inventor’s chaotic workshop. Despite my best efforts, I found myself unable to get even a basic "Hello World" example running. The project was in such a state of flux that even the directions in their README were impossible to replicate.
 
-As of today, getting even a simple example to run without hiccups is like trying to catch a rare Pokémon with a basic Poké Ball – frustratingly elusive. It’s curious that in 2024, with daily active contributions, there isn’t a “Hello World” that just works out of the box. Despite my best efforts, I can’t find any mention of the “kernel not found” error that I seem to be getting right after a simple install (pip).
+At this point, the maintainers seem knee-deep in development, leaving the project in a "dirty state" where nothing is working as expected. So, I reluctantly have to set aside any updates or further thoughts on Marimo. Let's hope that the maintainers sprinkle some magic dust soon and bring Marimo to life in ways we’ve only dreamed of. Until then, we wait with a mix of anticipation and amusement. Stay tuned, keep those fingers crossed, and enjoy the ride!
 
-But let’s not lose hope just yet! Maybe the maintainers are gearing up for a grand comeback. Perhaps they’re planning to sprinkle some magic dust and bring Marimo to life in ways we’ve only dreamed of. Until then, we wait with a mix of anticipation and amusement, hoping that soon we’ll see Marimo living up to its full potential. Stay tuned, keep those fingers crossed, and enjoy the ride!
+**The example code provided here might no longer be supported or correct.** With the project's current instability, I won’t be attempting any updates or diving back into Marimo’s quirky world anytime soon.
 
 ### References:
 
