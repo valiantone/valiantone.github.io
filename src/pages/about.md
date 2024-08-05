@@ -3,9 +3,9 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-Frequent Bayesianism is a cheeky, made up term that invokes an outdated, ideological debate in the field of probability and data science. With little meaning it serves as great name for a personal publication.
+Frequent Bayesianism is a cheeky, made-up term that invokes an outdated, ideological debate in the field of probability and data science. With little meaning, it serves as a great name for a personal publication.
 
-This blog features a variety of digital fundamentals ranging from career to code, data to design.
+This blog features a variety of digital fundamentals ranging from career to code, data to design. And as a bonus, it also doubles as a treasure trove, archiving my posts and articles from various online publishing platforms over the years. Consider it a quirky time capsule of my digital musings!
 
 This blog was primarily set up to support self-starters who would like to stay on top of latest developments in core CS topics (databases, algorithms, networks and operating systems) and data science. Additionally, I also curate posts pertaining to my experience in the realm of digital learning, volunteering and community projects.
 
