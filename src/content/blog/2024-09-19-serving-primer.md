@@ -20,6 +20,8 @@ So, let’s take a step back and explore the roots of server technologies. Ready
 
 ### How Web Servers Changed the Game
 
+![Software Evolution](@assets/images/software_evolution.webp)
+
 **For years, software had been a tangible product** — packaged in CDs or floppy disks, shipped off to users in boxes, and installed directly onto their machines. Whether it was a classic video game, office software, or early computer programs, one thing remained constant: the code ran **client-side**, meaning everything happened on the user’s machine. Software delivery was static, confined to what was contained in those hardware boxes, and updates or changes required entirely new shipments.
 
 This world of static, local software was **revolutionized in 1990** when **Tim Berners-Lee** ran the first **web server** at CERN. With the simple invention of the **World Wide Web**, we changed the landscape of how we think about software. For the first time, **code could live elsewhere**—on remote servers—allowing clients (in this case, web browsers) to send requests and retrieve fully functioning pages over the internet.
@@ -29,6 +31,8 @@ This world of static, local software was **revolutionized in 1990** when **Tim B
 The big deal about this was that **software no longer had to live on your computer**. Now, it could live on the web server, and anyone with a browser could just “request” what they needed from that server. This meant that the software could be updated or changed whenever the server wanted, and everyone using it would get the new version instantly—**no more CDs or downloads needed**. This was the birth of **dynamic web applications**, marking a shift in how we interact with software.
 
 ### From Code to Cloud: Why We Needed Containers
+
+![Containerized Services](@assets/images/containerized_services.webp)
 
 Once web servers made it possible to deliver software remotely, the next challenge was consistency. In the CD and floppy disk era, you shipped an entire, self-contained software package. But in the cloud era, apps were deployed to shared servers that needed to be configured just right—leading to the infamous “it works on my machine” problem. As software became more complex and global, deployment needed to be reliable, repeatable, and environment-agnostic.
 
