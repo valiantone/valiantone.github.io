@@ -1,6 +1,6 @@
 ---
 title: Learning to Code in the Age of Models - Summer 2025 Prep
-pubDatetime: 2025-05-20T10:00:00Z
+pubDatetime: 2025-05-18T10:00:00Z
 postSlug: coding-in-age-of-models
 featured: true
 draft: false
