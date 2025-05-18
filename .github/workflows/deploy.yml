@@ -17,6 +17,12 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
 
+      - name: Preload required artifact action
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: noop
+          path: .
+
       - name: Install, build, and upload your site
         uses: withastro/action@v1
 
