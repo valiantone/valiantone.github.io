@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+{% block meta_title %}{{ page.title }}{% endblock %}
+{% block meta_desc %}{{ page.description }}{% endblock %}
+{% block og_title %}{{ page.title }}{% endblock %}
+{% block og_desc %}{{ page.description }}{% endblock %}
+{% block tw_title %}{{ page.title }}{% endblock %}
+{% block tw_desc %}{{ page.description }}{% endblock %}
+
+{% block body %}
+<div class="container" style="display:flex; justify-content:flex-start; padding:0 0.5rem;">
+  <a href="javascript:history.back()" class="go-back">
+    <svg xmlns="http://www.w3.org/2000/svg"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>
+    <span>Go back</span>
+  </a>
+</div>
+<main id="main-content">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <div class="card-datetime" style="margin:0.5rem 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path>
+      <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path>
+    </svg>
+    <span class="sr-only">Posted on:</span>
+    <span>{{ page.date | date(format="%B %d, %Y") }}</span>
+  </div>
+  <article id="article" role="article" class="prose">
+    {{ page.content | safe }}
+  </article>
+
+  {% if page.taxonomies.tags is defined %}
+  <ul class="tags-container">
+    {% for tag in page.taxonomies.tags %}
+      {{ macros::tag_item(name=tag) }}
+    {% endfor %}
+  </ul>
+  {% endif %}
+</main>
+{% endblock %}

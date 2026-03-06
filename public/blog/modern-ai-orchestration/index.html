@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  
+  <link rel="canonical" href="https:&#x2F;&#x2F;valiantone.github.io&#x2F;blog&#x2F;modern-ai-orchestration&#x2F;">
+  
+
+  <title>A Guide to Modern Workflow and AI Orchestration | Frequently Bayesian</title>
+  <meta name="title" content="A Guide to Modern Workflow and AI Orchestration">
+  <meta name="description" content="Master modern AI orchestration with a hands-on project and step-by-step guidance using Apache Airflow, Mage, or Prefect!">
+  <meta name="author" content="Zubin J">
+  <link rel="sitemap" href="/sitemap.xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="A Guide to Modern Workflow and AI Orchestration">
+  <meta property="og:description" content="Master modern AI orchestration with a hands-on project and step-by-step guidance using Apache Airflow, Mage, or Prefect!">
+  <meta property="og:url" content="https:&#x2F;&#x2F;valiantone.github.io&#x2F;blog&#x2F;modern-ai-orchestration&#x2F;">
+  <meta property="og:image" content="https:&#x2F;&#x2F;valiantone.github.io/og-default.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="A Guide to Modern Workflow and AI Orchestration">
+  <meta property="twitter:description" content="Master modern AI orchestration with a hands-on project and step-by-step guidance using Apache Airflow, Mage, or Prefect!">
+  <meta property="twitter:image" content="https:&#x2F;&#x2F;valiantone.github.io/og-default.jpg">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="">
+
+  <link rel="stylesheet" href="/style.css">
+  <script src="/toggle-theme.js"></script>
+</head>
+<body>
+  <a id="skip-to-content" href="#main-content">Skip to content</a>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="top-nav-wrap">
+        <a href="/" class="logo">Frequently Bayesian</a>
+        <nav id="nav-menu">
+          <button class="hamburger-menu" aria-label="Open Menu" aria-expanded="false" aria-controls="menu-items">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="menu-icon">
+              <line x1="7" y1="12" x2="21" y2="12" class="line"></line>
+              <line x1="3" y1="6" x2="21" y2="6" class="line"></line>
+              <line x1="12" y1="18" x2="21" y2="18" class="line"></line>
+              <line x1="18" y1="6" x2="6" y2="18" class="close"></line>
+              <line x1="6" y1="6" x2="18" y2="18" class="close"></line>
+            </svg>
+          </button>
+          <ul id="menu-items" class="display-none">
+            <li><a href="/blog" class="active">Posts</a></li>
+            <li><a href="/tags" >Tags</a></li>
+            <li><a href="/about" >About</a></li>
+            <li>
+              <a href="/search" class="link-button" aria-label="search" title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg"><path d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"></path></svg>
+              </a>
+            </li>
+            <li>
+              <button id="theme-btn" title="Toggles light &amp; dark" aria-label="auto" aria-live="polite">
+                <svg xmlns="http://www.w3.org/2000/svg" id="moon-svg"><path d="M20.742 13.045a8.088 8.088 0 0 1-2.077.271c-2.135 0-4.14-.83-5.646-2.336a8.025 8.025 0 0 1-2.064-7.723A1 1 0 0 0 9.73 2.034a10.014 10.014 0 0 0-4.489 2.582c-3.898 3.898-3.898 10.243 0 14.143a9.937 9.937 0 0 0 7.072 2.93 9.93 9.93 0 0 0 7.07-2.929 10.007 10.007 0 0 0 2.583-4.491 1.001 1.001 0 0 0-1.224-1.224zm-2.772 4.301a7.947 7.947 0 0 1-5.656 2.343 7.953 7.953 0 0 1-5.658-2.344c-3.118-3.119-3.118-8.195 0-11.314a7.923 7.923 0 0 1 2.06-1.483 10.027 10.027 0 0 0 2.89 7.848 9.972 9.972 0 0 0 7.848 2.891 8.036 8.036 0 0 1-1.484 2.059z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" id="sun-svg"><path d="M6.993 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007S14.761 6.993 12 6.993 6.993 9.239 6.993 12zM12 8.993c1.658 0 3.007 1.349 3.007 3.007S13.658 15.007 12 15.007 8.993 13.658 8.993 12 10.342 8.993 12 8.993zM10.998 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2h-3zm17 0h3v2h-3zM4.219 18.363l2.12-2.122 1.415 1.414-2.12 2.122zM16.24 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.342 7.759 4.22 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"></path></svg>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="container"><hr></div>
+  </header>
+
+  
+<div class="container" style="display:flex; justify-content:flex-start; padding:0 0.5rem;">
+  <a href="javascript:history.back()" class="go-back">
+    <svg xmlns="http://www.w3.org/2000/svg"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>
+    <span>Go back</span>
+  </a>
+</div>
+<main id="main-content">
+  <h1 class="post-title">A Guide to Modern Workflow and AI Orchestration</h1>
+  <div class="card-datetime" style="margin:0.5rem 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path>
+      <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path>
+    </svg>
+    <span class="sr-only">Posted on:</span>
+    <span>August 03, 2024</span>
+  </div>
+  <article id="article" role="article" class="prose">
+    <blockquote>
+<p>In the rapidly evolving landscape of technology, treating AI and data workflows the same is a significant oversight that can hinder progress. Many organizations have discovered that the requirements for AI pipelines are far more complex than traditional ETL (Extract, Transform, Load) pipelines. This realization has paved the way for modern AI orchestration, which is designed to meet the demands of today’s sophisticated workloads.</p>
+</blockquote>
+<h3 id="understanding-modern-ai-orchestration">Understanding Modern AI Orchestration</h3>
+<p>AI pipelines are inherently more complex than traditional ETL pipelines. While ETL pipelines primarily focus on data movement and transformation, AI pipelines encompass a broader range of tasks, including data preprocessing, model training, hyperparameter tuning, model deployment, and monitoring. This complexity arises from the need to manage diverse and resource-intensive tasks that must be executed efficiently and often in parallel.</p>
+<p>Modern AI orchestration is the process of coordinating and managing the various tasks and components involved in AI workflows. It goes beyond simple task scheduling to provide a robust framework that handles the dynamic and heterogeneous nature of AI workloads. This orchestration ensures that resources are allocated efficiently, tasks are executed in the correct sequence, and the overall workflow is optimized for performance and scalability.</p>
+<h4 id="critical-aspects-of-modern-orchestration">Critical Aspects of Modern Orchestration</h4>
+<p>For modern orchestration, I believe it's absolutely critical to enable and seamlessly unify teams and technology stacks, fostering collaboration among <strong>data scientists</strong>, <strong>ML engineers</strong>, and <strong>application developers</strong>. The integration of diverse expertise and tools is essential for creating robust AI solutions. By bridging gaps between different roles, modern orchestration ensures that all team members can contribute effectively to the workflow, enhancing overall productivity and innovation.</p>
+<p>In my experience, developers working on these applications are going to need autonomy and control over all three of these functional roles. It may even require one person to wear multiple hats. The flexibility to switch between roles and responsibilities allows for more agile and responsive development processes. This multifaceted approach ensures that developers can address various challenges efficiently, from data preprocessing to model deployment and application integration.</p>
+<h3 id="key-features-and-benefits-of-modern-ai-orchestration">Key Features and Benefits of Modern AI Orchestration</h3>
+<ol>
+<li>
+<p><strong>Efficiency</strong>: Modern AI orchestration maximizes resource utilization and minimizes idle time. By intelligently scheduling tasks and managing dependencies, it ensures that the available computational power is used to its full potential. This leads to optimized pipeline management and faster time-to-market for AI models.</p>
+</li>
+<li>
+<p><strong>Scalability</strong>: As AI workloads grow, so does the need for scalable solutions. Modern orchestration platforms are designed to scale seamlessly, accommodating increasing data volumes and computational demands without compromising performance. This dynamic resource management ensures computational resources are used effectively, reducing costs and avoiding bottlenecks.</p>
+</li>
+<li>
+<p><strong>Ease of Use</strong>: A user-friendly interface and intuitive design are critical for adoption. Modern AI orchestration platforms offer simplified workflows and automation features that reduce the learning curve and empower users to focus on high-value tasks. This improved ease of use facilitates collaboration among data scientists, engineers, and other stakeholders.</p>
+</li>
+<li>
+<p><strong>Agility</strong>: The ability to quickly adapt to changing requirements and environments is essential. Modern AI orchestration provides the flexibility to modify workflows, integrate new tools, and respond to evolving business needs promptly. Enhanced monitoring and maintenance features ensure that workflows run smoothly and any issues are addressed promptly.</p>
+</li>
+</ol>
+<h3 id="comparing-modern-ai-orchestration-tools">Comparing Modern AI Orchestration Tools</h3>
+<p>There are several tools in the ecosystem that offer orchestration capabilities, including Airflow, Mage, and Prefect. Each of these tools has its strengths and limitations, and it's important to understand how they compare to modern AI orchestration solutions.</p>
+<ol>
+<li>
+<p><strong>Apache Airflow</strong>: Airflow is a popular open-source tool for orchestrating complex workflows. It is highly extensible and provides robust scheduling and monitoring features. However, Airflow's primary focus is on ETL processes, and it may require significant customization to handle the complexity of AI pipelines. Its user interface can also be less intuitive compared to newer orchestration platforms.</p>
+</li>
+<li>
+<p><strong>Mage</strong>: Mage is designed to simplify data engineering by providing a visual interface for building and managing data pipelines. It aims to make the process accessible to non-technical users and integrates well with various data sources. While Mage is user-friendly, it may lack some of the advanced features and scalability required for large-scale AI workflows.</p>
+</li>
+<li>
+<p><strong>Prefect</strong>: Prefect offers a modern approach to workflow orchestration with a focus on reliability and ease of use. It provides a flexible framework for building, scheduling, and monitoring workflows. Prefect's emphasis on dataflow and its intuitive user interface make it a strong contender for managing AI pipelines. However, its community and ecosystem are still growing compared to more established tools like Airflow.</p>
+</li>
+</ol>
+<h3 id="conclusion">Conclusion</h3>
+<p>The complexities of AI workflows necessitate a shift from traditional data workflow management to modern AI orchestration. By embracing the efficiency, scalability, ease of use, and agility offered by contemporary orchestration platforms, organizations can optimize their AI pipeline management, ultimately driving innovation and competitive advantage. As the field of AI continues to advance, the importance of robust orchestration solutions will only grow, making it a critical component of modern AI infrastructure.</p>
+<p>Modern orchestration is not just about managing tasks; it's about unifying teams and technology stacks, providing autonomy and control, and fostering collaboration. This holistic approach empowers organizations to harness the full potential of AI, paving the way for future advancements and success.</p>
+<h2 id="putting-theory-to-practice">Putting Theory to Practice</h2>
+<p>Bored with reading more of the theory? Now it’s time to get your hands dirty. In this section, we’re going to introduce you to some learning content for three of the most popular tools for modern data orchestration: Apache Airflow, Mage, and Prefect. Each tool has its unique strengths, and we’ve curated some excellent YouTube lessons to get you started. <strong>Pick one</strong> that resonates with you and dive in!</p>
+<ul>
+<li><h5 id="apache-airflow-tutorial-for-data-engineers">Apache Airflow Tutorial for Data Engineers</h5>
+<blockquote>
+<p>This tutorial provides a comprehensive introduction to Apache Airflow, covering key concepts and practical applications for data engineers.</p>
+</blockquote>
+<p><a rel="external" href="https://www.youtube.com/live/y5rYZLBZ_Fw?app=desktop">Watch the tutorial</a></p>
+</li>
+<li><h5 id="data-talks-club-mage-tutorial">Data Talks Club - Mage Tutorial</h5>
+<blockquote>
+<p>This video provides a detailed tutorial on setting up and using Mage for data pipeline management.</p>
+</blockquote>
+<p><a rel="external" href="https://www.youtube.com/watch?v=JKALtxziBG0">Watch the tutorial</a></p>
+</li>
+<li><h5 id="getting-started-with-prefect">Getting Started with Prefect</h5>
+<blockquote>
+<p>This tutorial provides a comprehensive introduction to Prefect, covering its core concepts and functionalities.</p>
+</blockquote>
+<p><a rel="external" href="https://www.youtube.com/watch?v=D5DhwVNHWeU">Watch the tutorial</a></p>
+</li>
+</ul>
+<h4 id="that-s-a-wrap">That's a Wrap!</h4>
+<p>We’ve introduced you to three powerful tools for modern data orchestration: Apache Airflow, Mage, and Prefect. Each tool has its unique strengths, and the YouTube lessons provided offer an excellent overview to get you started. <strong>Your task, should you choose to accept it, is to pick one of these tools and familiarize yourself with it using the corresponding video lesson provided. Once you have a basic command of the tool, you can proceed to the next section, where we will walk you through a mini-project.</strong> This project will help you understand an end-to-end example of what modern AI orchestration can help us achieve.</p>
+<h3 id="the-fun-part-your-assignment">The Fun Part: Your Assignment</h3>
+<p>Alright, now that you’ve picked a tool and familiarized yourself with the basics, it’s time to put your knowledge into action with a mini-project that will challenge and hone your new skills. Get ready to become a data orchestration pro!</p>
+<p><strong>The Project:</strong> Taxi vs. Uber Cost Predictor</p>
+<p><strong>Objective:</strong> Build an ETL pipeline that ingests, processes, stores, and serves NYC taxi trip data. Your goal is to train a model that predicts whether a taxi or Uber would be cheaper for a given trip request.</p>
+<h4 id="setting-up-the-datasets">Setting Up the Datasets</h4>
+<ol>
+<li><strong>NYC Taxi Data</strong>:
+<ul>
+<li><a rel="external" href="https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page">NYC Taxi &amp; Limousine Commission (TLC) Trip Record Data</a></li>
+<li>This dataset includes information about taxi trips in New York City, such as pickup and dropoff dates/times, locations, trip distances, and fares.</li>
+</ul>
+</li>
+<li><strong>Uber Data</strong>:
+<ul>
+<li><a rel="external" href="https://data.cityofnewyork.us/Transportation/uber-Data/gre9-vvjv/about_data">Uber Data from NYC Open Data</a></li>
+<li>This dataset includes Uber trip details in New York City, such as pickup and dropoff dates/times, locations, and fare amounts.</li>
+</ul>
+</li>
+</ol>
+<h4 id="project-steps">Project Steps</h4>
+<ol>
+<li>Ingest Data:
+<ul>
+<li>Use your chosen tool to create an ETL pipeline that ingests NYC Taxi data and Uber data.</li>
+<li>Schedule regular updates to keep the data current.</li>
+<li>You will need to synchronize the time between the two datasets to ensure uniform data from the same period in your training and inference code.</li>
+</ul>
+</li>
+<li>Process Data:
+<ul>
+<li>Clean the data by handling missing values and outliers.</li>
+<li>Transform the data to calculate trip distances, times, and fare amounts. Include additional features like time of day and day of the week.</li>
+</ul>
+</li>
+<li>Store Data:
+<ul>
+<li>Set up a database (PostgreSQL, Redshift, BigQuery, etc.) to store raw and processed data.</li>
+<li>Load the cleaned and transformed data into the database.</li>
+</ul>
+</li>
+<li>Serve Data:
+<ul>
+<li>Develop an API to serve the data. This API should accept trip details (time, source, destination) and return the predicted cheaper option (taxi or Uber).</li>
+</ul>
+</li>
+<li>Train the Model:
+<ul>
+<li>Use historical fare data to train a machine learning model (e.g., a regression model) to predict fares for taxis and Uber.</li>
+<li>Evaluate the model’s performance using metrics like Mean Absolute Error (MAE).</li>
+</ul>
+</li>
+<li>Deploy the Model:
+<ul>
+<li>Integrate the model with your API to provide real-time fare predictions.</li>
+</ul>
+</li>
+</ol>
+<h4 id="running-the-project-locally">Running the Project Locally</h4>
+<p>For this project, focus on running your ETL pipeline and model locally. This approach simplifies the setup and allows you to iterate quickly without worrying about deployment complexities. Here’s a quick guide:</p>
+<ol>
+<li>Set Up Your Environment:
+<ul>
+<li>Ensure you have all necessary dependencies installed (Python, your chosen orchestration tool, database drivers, etc.).</li>
+</ul>
+</li>
+<li>Develop and Test:
+<ul>
+<li>Build each part of your pipeline incrementally, testing thoroughly as you go.</li>
+<li>Use local datasets and configurations to validate your ETL processes and model predictions.</li>
+</ul>
+</li>
+<li>Iterate and Improve:
+<ul>
+<li>Continuously refine your pipeline and model based on feedback and performance metrics.</li>
+<li>Experiment with different features and model parameters to improve accuracy.</li>
+</ul>
+</li>
+</ol>
+<h3 id="simple-right">Simple, Right?</h3>
+<p>Okay, maybe not simple, but definitely fun and incredibly useful. You’ll be combining your newfound skills in orchestration with real-world data to create something genuinely valuable. Plus, you get to say you’ve built an end-to-end data pipeline. How cool is that?</p>
+<p>Once you’ve completed the project, you’ll have a robust understanding of how to set up and manage complex data workflows. And who knows? Maybe your model will help people save money on their next ride!</p>
+<p>Ready, set, go! Dive into the resources, get familiar with your chosen tool, and start building your pipeline. Happy coding! 🚀</p>
+<h2 id="additional-resources">Additional Resources</h2>
+<p>For those eager students who have quickly digested our material and are hungry for more advanced, detailed resources to understand orchestration and its advanced use cases, we’ve collected some fantastic additional material. Happy learning! 🌻</p>
+<ul>
+<li><h5 id="astronomer-academy-free-airflow-courses">Astronomer Academy - Free Airflow Courses</h5>
+<blockquote>
+<p>Astronomer offers free courses taught by experts behind Apache Airflow, focusing on best practices for creating scalable and reliable data pipelines. Whether you want to deep dive into complex DAG structures or explore best practices for deployment and monitoring, these resources will guide you through advanced scenarios and real-world applications.</p>
+</blockquote>
+<p><a rel="external" href="https://www.youtube.com/live/y5rYZLBZ_Fw?app=desktop">Astronomer Academy</a></p>
+</li>
+</ul>
+
+  </article>
+
+  
+  <ul class="tags-container">
+    
+      
+<li class="tag ">
+  <a href="/tags/data-engineering/">
+    <svg xmlns="http://www.w3.org/2000/svg"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z"></path></svg>
+    &nbsp;<span>data-engineering</span>
+  </a>
+</li>
+
+    
+      
+<li class="tag ">
+  <a href="/tags/artificial-intelligence/">
+    <svg xmlns="http://www.w3.org/2000/svg"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z"></path></svg>
+    &nbsp;<span>artificial-intelligence</span>
+  </a>
+</li>
+
+    
+      
+<li class="tag ">
+  <a href="/tags/ai-orchestration/">
+    <svg xmlns="http://www.w3.org/2000/svg"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z"></path></svg>
+    &nbsp;<span>ai-orchestration</span>
+  </a>
+</li>
+
+    
+      
+<li class="tag ">
+  <a href="/tags/workflows/">
+    <svg xmlns="http://www.w3.org/2000/svg"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z"></path></svg>
+    &nbsp;<span>workflows</span>
+  </a>
+</li>
+
+    
+      
+<li class="tag ">
+  <a href="/tags/elt/">
+    <svg xmlns="http://www.w3.org/2000/svg"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z"></path></svg>
+    &nbsp;<span>elt</span>
+  </a>
+</li>
+
+    
+  </ul>
+  
+</main>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container"><hr></div>
+    <div class="footer-wrapper container">
+      <div class="social-icons">
+        <a href="https://github.com/valiantone" title="Frequently Bayesian on Github" class="link-button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg>
+        </a>
+        <a href="https://www.instagram.com/zrjohn/?hl=en" title="Frequently Bayesian on Instagram" class="link-button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><rect x="4" y="4" width="16" height="16" rx="4"></rect><circle cx="12" cy="12" r="3"></circle><line x1="16.5" y1="7.5" x2="16.5" y2="7.501"></line></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/zubin-john-953b4241/" title="Frequently Bayesian on LinkedIn" class="link-button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><line x1="8" y1="11" x2="8" y2="16"></line><line x1="8" y1="8" x2="8" y2="8.01"></line><line x1="12" y1="16" x2="12" y2="11"></line><path d="M16 16v-3a2 2 0 0 0 -4 0"></path></svg>
+        </a>
+        <a href="https://twitter.com/zubinj" title="Frequently Bayesian on Twitter" class="link-button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"></path></svg>
+        </a>
+      </div>
+      <div class="copyright-wrapper">
+        <span>Copyright &copy; 2026</span>
+        <span class="separator">&nbsp;|&nbsp;</span>
+        <span>All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      const menuBtn = document.querySelector(".hamburger-menu");
+      const menuIcon = document.querySelector(".menu-icon");
+      const menuItems = document.querySelector("#menu-items");
+      menuBtn?.addEventListener("click", () => {
+        const menuExpanded = menuBtn.getAttribute("aria-expanded") === "true";
+        menuIcon?.classList.toggle("is-active");
+        menuBtn.setAttribute("aria-expanded", menuExpanded ? "false" : "true");
+        menuBtn.setAttribute("aria-label", menuExpanded ? "Open Menu" : "Close Menu");
+        menuItems?.classList.toggle("display-none");
+      });
+    }
+    toggleNav();
+  </script>
+</body>
+</html>

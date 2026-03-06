@@ -1,0 +1,20 @@
+base_url = "https://valiantone.github.io"
+title = "Frequently Bayesian"
+description = "A blog featuring a variety of digital fundamentals ranging from career to code, data to design."
+compile_sass = true
+build_search_index = true
+generate_feeds = true
+feed_filenames = ["rss.xml"]
+taxonomies = [
+  { name = "tags", feed = true, paginate_by = 10 },
+]
+
+[search]
+include_title = true
+include_description = true
+include_content = true
+
+[extra]
+author = "Zubin J"
+og_image = "og-default.jpg"
+post_per_page = 3

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Frequently Bayesian - deep-learning</title>
+      <link>https://valiantone.github.io</link>
+      <description>A blog featuring a variety of digital fundamentals ranging from career to code, data to design.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://valiantone.github.io/tags/deep-learning/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Sun, 18 May 2025 16:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Building Understanding, Not Just Models. New Tools for Deep Learning in the Gen.A.I. Era</title>
+          <pubDate>Sun, 18 May 2025 16:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://valiantone.github.io/blog/software2-0-deep-learning-tools/</link>
+          <guid>https://valiantone.github.io/blog/software2-0-deep-learning-tools/</guid>
+          <description xml:base="https://valiantone.github.io/blog/software2-0-deep-learning-tools/">&lt;blockquote&gt;
+&lt;p&gt;This article is part of our CS101 series, created to help early-stage developers and students build strong mental models for the tech they’re learning. In this post, we turn our focus to Deep Learning—specifically the new generation of tools and frameworks that help you not just train models, but understand them.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h3 id=&quot;have-you-heard-of-software-2-0&quot;&gt;Have You Heard of Software 2.0?&lt;&#x2F;h3&gt;
+&lt;p&gt;Before we dive into the treasure trove of tools and tips we’ve gathered for you today, a quick pulse check—have you heard of the term &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;karpathy.medium.com&#x2F;software-2-0-a64152b37c35&quot;&gt;&lt;strong&gt;Software 2.0&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;? Coined by Andrej Karpathy in 2017, it describes a fundamental shift: instead of explicitly programming behavior line-by-line (Software 1.0), we now train neural networks to &lt;em&gt;learn&lt;&#x2F;em&gt; that behavior from data. Instead of code, we write datasets. Instead of logic trees, we design architectures and loss functions. And instead of debugging conditionals, we tune hyperparameters and examine gradients. Karpathy argued that neural networks aren’t just tools—they are a &lt;strong&gt;new way of programming&lt;&#x2F;strong&gt;. And in many domains, they’re winning.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;adult-rocket-one-person-frameworks-the-solo-stack-renaissance&quot;&gt;🧑‍🚀 One-Person Frameworks: The Solo Stack Renaissance&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;full_stack_solo_ops.webp&quot; alt=&quot;Full-stack Solo-ops&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Let’s talk about something beautifully personal: the return of the &lt;em&gt;one-person framework&lt;&#x2F;em&gt;. In a time where tools like Rails, Laravel, and even Flask gave solo developers full creative control, we’re now seeing a renaissance—especially in the Python world. One developer, one framework, one deployable product.&lt;&#x2F;p&gt;
+&lt;p&gt;Inspired by stories like &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;bramjetten.dev&#x2F;articles&#x2F;the-one-person-framework-in-practice&quot;&gt;this Rails journey to €1M ARR&lt;&#x2F;a&gt;, I&#x27;ve been thinking a lot about what this means for us in the age of AI. The core principle here is self-sufficiency: being able to take an idea from sketch to shipping, from logic to layout, without coordinating five teams. And for me, that freedom currently lives in the Pythonic joyride of &lt;strong&gt;FastAPI + HTMX&lt;&#x2F;strong&gt;—a stack that feels like it was written by Parseltongues 🐍.&lt;&#x2F;p&gt;
+&lt;p&gt;FastAPI you probably know—it’s modern, type-safe, and makes backend APIs feel like a breeze. But let me wax lyrical for a second about &lt;strong&gt;HTMX&lt;&#x2F;strong&gt;: it’s a tiny JavaScript library that lets you write &lt;em&gt;less JavaScript&lt;&#x2F;em&gt;. HTMX extends HTML with extra powers so that you can handle most dynamic interactions (think: search bars, live reloads, form submissions) by just adding attributes to your HTML. It’s like sprinkles of interactivity without the SPA complexity. You get server-driven UI without the overhead of full-blown frontends—and in the age of LLM-powered autocode and server-side dominance, it just makes sense.&lt;&#x2F;p&gt;
+&lt;p&gt;But it’s not without controversy. A recent &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;htmx&#x2F;comments&#x2F;1k5bz3y&#x2F;htmx_a_great_framework_that_ill_never_use_again&#x2F;&quot;&gt;criticism on Reddit&lt;&#x2F;a&gt; reminded me to re-examine my favorite pairing. The points raised—around debugability, component reuse, and tooling ergonomics—are worth considering. Yet in contrast, here&#x27;s &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;dev.to&#x2F;jaydevm&#x2F;fastapi-and-htmx-a-modern-approach-to-full-stack-bma&quot;&gt;a glowing tale of success&lt;&#x2F;a&gt; from someone who found the sweet spot of shipping fast and keeping sane.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;final-verdict&quot;&gt;Final Verdict&lt;&#x2F;h3&gt;
+&lt;p&gt;As for me? My go-to stack remains &lt;strong&gt;FastAPI + HTMX + Tailwind CSS&lt;&#x2F;strong&gt;. I find that many of the concerns raised—around templating and scalability—are well addressed by leaning into FastAPI’s Jinja templating engine. And Tailwind? It’s just enough frontend magic to keep things looking sharp without spiraling into JavaScript hell. For solo developers who want flexibility without losing control, this trio still hits the sweet spot.&lt;&#x2F;p&gt;
+&lt;p&gt;So what do you think, Techies? Have you tried a solo stack? Is the Pythonic one-person framework dream alive in 2025? Let us know in Slack.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;wrench-tools-to-build-trace-and-think&quot;&gt;🔧 Tools to Build, Trace, and Think&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;llama_rise.webp&quot; alt=&quot;Rise of Llamas&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;no-drama-trust-in-llama&quot;&gt;No Drama, Trust in LLaMA&lt;&#x2F;h3&gt;
+&lt;p&gt;Have you been paying attention to Meta’s LLaMA lineup lately? It might not make as much noise as ChatGPT or Gemini, but it’s quietly becoming one of the most powerful open-source contenders out there. While OpenAI, Perplexity, and Anthropic dominate headlines, LLaMA is slipping into real workflows and side projects with surprisingly strong results. If you’re looking to inject some serious firepower into your AI experiments without getting locked into proprietary ecosystems, it’s worth a look.&lt;&#x2F;p&gt;
+&lt;p&gt;If you&#x27;re new to the world of LLaMAs, you might want to check out highlights from the first-ever &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ai.meta.com&#x2F;blog&#x2F;llamacon-llama-news&#x2F;&quot;&gt;&lt;strong&gt;LlamaCon&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. Meta used the event to unveil exciting new tools and programs—from an interactive LLaMA API playground to security-focused tooling like LLaMA Protection Tools and the LLaMA Defenders Program. They also announced the latest LLaMA Impact Grants, awarding over $1.5 million to global projects using open models to drive real-world innovation. If you&#x27;re looking for inspiration (or a reason to get hyped), it&#x27;s a great place to start.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;don-t-have-cloud-credits-try-llama-on-your-machine&quot;&gt;Don’t Have Cloud Credits? Try LLaMA on Your Machine&lt;&#x2F;h3&gt;
+&lt;p&gt;Thanks to Ollama, you can now run models like DeepSeek-R1, Qwen 3, LLaMA 3.3, and others locally on your laptop. It’s a lightweight, dev-friendly way to experiment with LLMs—without needing an API key or GPU cluster.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ollama&#x2F;ollama&quot;&gt;Skip the fluff and dive straight into their GitHub repo&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Just install, load a model, and start prompting—all in your terminal. No billing dashboard, no vendor lock-in.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;no_cloud_ollama.webp&quot; alt=&quot;No Cloud required&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;speaking-of-more-tools-and-github-repos&quot;&gt;Speaking of More Tools and GitHub Repos&lt;&#x2F;h3&gt;
+&lt;p&gt;Here are two handpicked gems we think every Deep Learning student should check out:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;rodmarkun&#x2F;SmolML&quot;&gt;SmolML&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;SmolML is a tiny machine learning library built entirely in pure Python—no NumPy, no SciPy, no external C. It’s not about performance, but about understanding. You can walk through linear regression, backpropagation, gradient descent, and even simple neural networks, line by line. Great for learning or teaching ML fundamentals.&lt;&#x2F;p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;koaning&#x2F;flowshow&quot;&gt;Flowshow&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;This tiny Python library adds a &lt;code&gt;@task&lt;&#x2F;code&gt; decorator to your functions and automatically creates execution flowcharts. It’s perfect for students working on multi-step scripts or pipelines who want to visualize what’s going on without getting bogged down in full ML ops tooling.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;compass-outro-final-thoughts&quot;&gt;🧭 Outro - Final Thoughts&lt;&#x2F;h2&gt;
+&lt;p&gt;That’s a wrap—for now. We hope this roundup gives you a few new tools, ideas, and rabbit holes to explore. Whether you’re building, debugging, or just experimenting, remember that the right tool isn’t just about speed—it’s about clarity.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 Bonus Tip: Many of our favorite GitHub gems came from the &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;dataelixir.com&#x2F;&quot;&gt;Data Elixir Newsletter&lt;&#x2F;a&gt;. If you aren’t subscribed yet, fix that—it’s a weekly goldmine for data science nerds like us.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h3 id=&quot;sources-links&quot;&gt;Sources &amp;amp; Links&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;karpathy.medium.com&#x2F;software-2-0-a64152b37c35&quot;&gt;Software 2.0 – Andrej Karpathy&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;bramjetten.dev&#x2F;articles&#x2F;the-one-person-framework-in-practice&quot;&gt;The One-Person Framework in Practice (Rails)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;dev.to&#x2F;jaydevm&#x2F;fastapi-and-htmx-a-modern-approach-to-full-stack-bma&quot;&gt;FastAPI + HTMX Stack Example&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;htmx&#x2F;comments&#x2F;1k5bz3y&#x2F;htmx_a_great_framework_that_ill_never_use_again&#x2F;&quot;&gt;HTMX Reddit Criticism&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.llama.com&#x2F;&quot;&gt;LLaMA Homepage&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ai.meta.com&#x2F;blog&#x2F;llamacon-llama-news&#x2F;&quot;&gt;Takeaways from LlamaCon&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;about.fb.com&#x2F;news&#x2F;2025&#x2F;04&#x2F;llama-impact-grant-recipients&#x2F;&quot;&gt;LLaMA Impact Grant Recipients – Meta&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.llama.com&#x2F;llama-protections&#x2F;ai-defenders&#x2F;&quot;&gt;LLaMA Protections &amp;amp; AI Defenders Program&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ollama.com&#x2F;&quot;&gt;Ollama – Local LLM Deployment&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ollama&#x2F;ollama&quot;&gt;Ollama GitHub Repo&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;rodmarkun&#x2F;SmolML&quot;&gt;SmolML – Minimal ML Library&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;koaning&#x2F;flowshow&quot;&gt;Flowshow – Python Task Visualizer&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+      </item>
+    </channel>
+</rss>

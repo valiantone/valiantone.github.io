@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+
+{% block title %}Posts | {{ config.title }}{% endblock %}
+
+{% block body %}
+<nav class="breadcrumb" aria-label="breadcrumb">
+  <ul><li><a href="/">Home</a> <span aria-hidden="true">&nbsp;&gt;&nbsp;</span></li><li><span aria-current="page">Posts{% if paginator.current_index > 1 %} (page {{ paginator.current_index }}){% endif %}</span></li></ul>
+</nav>
+<main id="main-content">
+  <h1>Posts</h1>
+  <p>All the articles I've posted.</p>
+  <ul>
+    {% for page in paginator.pages %}
+      {{ macros::post_card(page=page) }}
+    {% endfor %}
+  </ul>
+</main>
+
+{% if paginator.number_pagers > 1 %}
+<nav class="pagination-wrapper" aria-label="Pagination">
+  {% if paginator.current_index > 1 %}
+    <a href="{{ paginator.previous }}" aria-label="Previous">
+      <svg xmlns="http://www.w3.org/2000/svg"><path d="M12.707 17.293 8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"></path></svg>
+      Prev
+    </a>
+  {% endif %}
+  {% if paginator.current_index < paginator.number_pagers %}
+    <a href="{{ paginator.next }}" aria-label="Next">
+      Next
+      <svg xmlns="http://www.w3.org/2000/svg"><path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path></svg>
+    </a>
+  {% endif %}
+</nav>
+{% endif %}
+{% endblock %}

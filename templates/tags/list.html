@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+
+{% block title %}Tags | {{ config.title }}{% endblock %}
+
+{% block body %}
+<nav class="breadcrumb" aria-label="breadcrumb">
+  <ul><li><a href="/">Home</a> <span aria-hidden="true">&nbsp;&gt;&nbsp;</span></li><li><span aria-current="page">Tags</span></li></ul>
+</nav>
+<main id="main-content">
+  <h1>Tags</h1>
+  <p>All the tags used in posts.</p>
+  <ul>
+    {% for tag in terms %}
+      {{ macros::tag_item(name=tag.name, size="lg") }}
+    {% endfor %}
+  </ul>
+</main>
+{% endblock %}

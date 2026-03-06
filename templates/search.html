@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}Search | {{ config.title }}{% endblock %}
+
+{% block body %}
+<nav class="breadcrumb" aria-label="breadcrumb">
+  <ul><li><a href="/">Home</a> <span aria-hidden="true">&nbsp;&gt;&nbsp;</span></li><li><span aria-current="page">Search</span></li></ul>
+</nav>
+<main id="main-content">
+  <h1>Search</h1>
+  <p>Search any article ...</p>
+  <label class="search-label">
+    <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" aria-hidden="true">
+      <path d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"></path>
+    </svg>
+    <input class="search-input" id="search-input" type="text" placeholder="Search for anything..." autofocus autocomplete="off">
+  </label>
+  <div id="search-results-info" style="margin-top:2rem;"></div>
+  <ul id="search-results"></ul>
+</main>
+
+<script>
+  function debounce(fn, delay) {
+    let timer;
+    return function(...args) { clearTimeout(timer); timer = setTimeout(() => fn.apply(this, args), delay); };
+  }
+
+  async function initSearch() {
+    const resp = await fetch("/search_index.en.json");
+    const data = await resp.json();
+
+    const idx = elasticlunr(function() {
+      this.addField("title");
+      this.addField("body");
+      this.setRef("id");
+    });
+
+    data.forEach(doc => {
+      idx.addDoc({ id: doc.id, title: doc.title, body: doc.body });
+    });
+
+    const input = document.getElementById("search-input");
+    const resultsEl = document.getElementById("search-results");
+    const infoEl = document.getElementById("search-results-info");
+
+    // Check URL for query
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("q")) { input.value = params.get("q"); doSearch(input.value); }
+
+    input.addEventListener("input", debounce(function() {
+      const q = input.value;
+      if (q.length > 0) {
+        const sp = new URLSearchParams(window.location.search);
+        sp.set("q", q);
+        history.replaceState(null, "", window.location.pathname + "?" + sp.toString());
+      } else {
+        history.replaceState(null, "", window.location.pathname);
+      }
+      doSearch(q);
+    }, 200));
+
+    function doSearch(query) {
+      resultsEl.innerHTML = "";
+      infoEl.textContent = "";
+      if (query.length < 2) return;
+
+      const results = idx.search(query, { expand: true });
+      infoEl.textContent = `Found ${results.length} result${results.length === 1 ? "" : "s"} for '${query}'`;
+
+      results.forEach(r => {
+        const doc = data.find(d => d.id === r.ref);
+        if (!doc) return;
+        const li = document.createElement("li");
+        li.className = "card";
+        li.innerHTML = `<a href="${doc.id}" class="card-title"><h2>${doc.title}</h2></a>`;
+        resultsEl.appendChild(li);
+      });
+    }
+  }
+
+  if (typeof elasticlunr === "undefined") {
+    const script = document.createElement("script");
+    script.src = "/elasticlunr.min.js";
+    script.onload = initSearch;
+    document.head.appendChild(script);
+  } else {
+    initSearch();
+  }
+</script>
+{% endblock %}

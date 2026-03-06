@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Frequently Bayesian - interactive-python</title>
+      <link>https://valiantone.github.io</link>
+      <description>A blog featuring a variety of digital fundamentals ranging from career to code, data to design.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://valiantone.github.io/tags/interactive-python/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Mon, 11 Dec 2023 23:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Exploring Alternatives to Jupyter Notebooks - Introducing Marimo Notebooks</title>
+          <pubDate>Mon, 11 Dec 2023 23:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://valiantone.github.io/blog/marimo-notebooks/</link>
+          <guid>https://valiantone.github.io/blog/marimo-notebooks/</guid>
+          <description xml:base="https://valiantone.github.io/blog/marimo-notebooks/">&lt;blockquote&gt;
+&lt;p&gt;Ever since its inception in 2014, Jupyter Notebooks have been the go-to for data enthusiasts, scientists, and educators alike. Their interactive interface and multi-language support have made them indispensable. But let’s face it, even the best tools have their quirks and room for improvement. Despite being a Jupyter aficionado, I believe it’s essential to periodically scrutinize alternatives to ensure we’re using the best tools available. Enter Marimo, a reactive Python notebook promising to address Jupyter’s shortcomings. Let’s dive into why you might want to consider it.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h3 id=&quot;documented-limitations-of-jupyter&quot;&gt;Documented Limitations of Jupyter&lt;&#x2F;h3&gt;
+&lt;p&gt;Alright, folks, let’s address the elephant in the room – Jupyter’s quirks and quibbles. While Jupyter Notebooks have revolutionized data science, they aren’t without their flaws. Here are some of the most documented gripes:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Hidden State Issues&lt;&#x2F;strong&gt;: The order of cell execution can lead to inconsistencies and bugs. Running cells out of order? Good luck keeping track of that.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Version Control Nightmares:&lt;&#x2F;strong&gt; Storing notebooks as JSON files is a version control nightmare. Diffing and merging? Not so fun.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Manual Updates Required:&lt;&#x2F;strong&gt; Changes in one part of a notebook don’t propagate automatically. Manually re-executing dependent cells is a recipe for errors.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Performance and Scalability:&lt;&#x2F;strong&gt; Jupyter can lag with large datasets or complex computations. Plus, running a server can be a hassle in resource-constrained environments.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Interactivity Limitations:&lt;&#x2F;strong&gt; Widgets and extensions are great, but setting them up can be a pain. Not always the smoothest experience.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;These are just a few of the hiccups that have users occasionally pulling their hair out. And this is where Marimo steps in, promising to smooth out these rough edges.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;how-marimo-is-the-solution&quot;&gt;How Marimo is the Solution&lt;&#x2F;h3&gt;
+&lt;p&gt;Marimo swoops in like a caped hero to rescue us from Jupyter’s pitfalls with its arsenal of next-gen features:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Reactive Programming:&lt;&#x2F;strong&gt; Marimo’s reactive model ensures that changes to inputs automatically update all dependent outputs. Say goodbye to manual cell re-executions and hello to seamless updates.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Python File Storage:&lt;&#x2F;strong&gt; Storing notebooks as .py files makes version control a breeze. Git merges and diffs are finally your friends again.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;No Hidden State:&lt;&#x2F;strong&gt; Marimo ensures a visible, reproducible state, making debugging straightforward and reducing those pesky hidden state issues.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Executable as Scripts:&lt;&#x2F;strong&gt; Marimo notebooks double as Python scripts. This means you can run them anywhere, integrating smoothly into broader projects without extra hoops.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Deployable as Web Apps:&lt;&#x2F;strong&gt; Transform your notebooks into interactive web apps effortlessly. Share interactive data visualizations and dashboards without forcing anyone to install additional software.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;WebAssembly (WASM) Compatibility:&lt;&#x2F;strong&gt; Marimo can run entirely in your browser using WASM, making it accessible on platforms where installing Python might be challenging.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Enhanced Collaboration:&lt;&#x2F;strong&gt; Real-time collaboration is natively integrated. Multiple users can work on the same notebook simultaneously, making teamwork smoother than ever.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;By addressing these limitations, Marimo positions itself as a robust alternative to Jupyter, bringing in performance, collaboration, and usability improvements that make it a worthy contender in the realm of interactive notebooks.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;getting-started-with-marimo&quot;&gt;Getting Started with Marimo&lt;&#x2F;h3&gt;
+&lt;p&gt;Ready to dive into Marimo? Let’s get you up and running with this exciting new tool. Follow these steps to start exploring Marimo’s capabilities:&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;installation&quot;&gt;Installation:&lt;&#x2F;h4&gt;
+&lt;p&gt;First, make sure you have Python installed. Then, install Marimo using pip:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code data-lang=&quot;bash&quot;&gt;pip install marimo plotly pandas
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h4 id=&quot;launching-marimo&quot;&gt;Launching Marimo:&lt;&#x2F;h4&gt;
+&lt;p&gt;Once installed, launch Marimo by running:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code data-lang=&quot;bash&quot;&gt;marimo edit
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This command starts the Marimo server and opens the interface in your default web browser.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;example-code&quot;&gt;Example Code:&lt;&#x2F;h4&gt;
+&lt;p&gt;Here’s a simple data analysis task to get you started, let&#x27;s save this file as &lt;code&gt;analysis.py&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code data-lang=&quot;python&quot;&gt;import marimo
+
+
+# Initialize the CSV data as a multiline string
+csv_data = &amp;quot;&amp;quot;&amp;quot;#,Name,Type 1,Type 2,Total,HP,Attack,Defense,Sp. Atk,Sp. Def,Speed,Generation,Legendary
+1,Bulbasaur,Grass,Poison,318,45,49,49,65,65,45,1,False
+2,Ivysaur,Grass,Poison,405,60,62,63,80,80,60,1,False
+3,Venusaur,Grass,Poison,525,80,82,83,100,100,80,1,False
+3,VenusaurMega Venusaur,Grass,Poison,625,80,100,123,122,120,80,1,False
+4,Charmander,Fire,,309,39,52,43,60,50,65,1,False
+5,Charmeleon,Fire,,405,58,64,58,80,65,80,1,False
+6,Charizard,Fire,Flying,534,78,84,78,109,85,100,1,False
+6,CharizardMega Charizard X,Fire,Dragon,634,78,130,111,130,85,100,1,False
+6,CharizardMega Charizard Y,Fire,Flying,634,78,104,78,159,115,100,1,False
+7,Squirtle,Water,,314,44,48,65,50,64,43,1,False
+8,Wartortle,Water,,405,59,63,80,65,80,58,1,False
+9,Blastoise,Water,,530,79,83,100,85,105,78,1,False
+9,BlastoiseMega Blastoise,Water,,630,79,103,120,135,115,78,1,False
+10,Caterpie,Bug,,195,45,30,35,20,20,45,1,False
+11,Metapod,Bug,,205,50,20,55,25,25,30,1,False
+12,Butterfree,Bug,Flying,395,60,45,50,90,80,70,1,False
+13,Weedle,Bug,Poison,195,40,35,30,20,20,50,1,False
+14,Kakuna,Bug,Poison,205,45,25,50,25,25,35,1,False
+15,Beedrill,Bug,Poison,395,65,90,40,45,80,75,1,False
+15,BeedrillMega Beedrill,Bug,Poison,495,65,150,40,15,80,145,1,False
+16,Pidgey,Normal,Flying,251,40,45,40,35,35,56,1,False
+17,Pidgeotto,Normal,Flying,349,63,60,55,50,50,71,1,False
+18,Pidgeot,Normal,Flying,479,83,80,75,70,70,101,1,False
+18,PidgeotMega Pidgeot,Normal,Flying,579,83,80,80,135,80,121,1,False
+19,Rattata,Normal,,253,30,56,35,25,35,72,1,False
+20,Raticate,Normal,,413,55,81,60,50,70,97,1,False&amp;quot;&amp;quot;&amp;quot;
+
+# Create the Marimo app
+app = marimo.App(width=&amp;quot;full&amp;quot;)
+
+
+@app.cell
+def __(mo, plot):
+    mo.hstack([plot, plot.value])
+    return
+
+@app.cell
+def __():
+    import marimo as mo
+    import pandas as pd
+    import plotly.express as px
+    from io import StringIO
+
+    return mo, pd, px, StringIO
+
+
+@app.cell
+def __(pd, mo, StringIO):
+    # Read the CSV data into a DataFrame
+    data = pd.read_csv(StringIO(csv_data))
+    poke_type = mo.ui.dropdown(
+        label=&amp;quot;Select Type&amp;quot;, options=[&amp;quot;All&amp;quot;] + data[&amp;quot;Type 1&amp;quot;].unique().tolist(), value=&amp;quot;All&amp;quot;
+    )
+    return poke_type, data
+
+
+@app.cell
+def __(mo, px, poke_type, data):
+    if poke_type == &amp;quot;All&amp;quot;:
+        filtered_data = data
+    else:
+        filtered_data = data[data[&amp;quot;Type&amp;quot;] == poke_type]
+
+    fig = px.scatter(
+        filtered_data,
+        x=&amp;quot;Attack&amp;quot;,
+        y=&amp;quot;Defense&amp;quot;,
+        color=&amp;quot;Name&amp;quot;,
+        size=&amp;quot;HP&amp;quot;,
+        hover_name=&amp;quot;Name&amp;quot;,
+        title=f&amp;quot;{poke_type} Type Pokémon: Attack vs Defense&amp;quot;,
+    )
+    _plot = px.scatter(filtered_data, x=&amp;quot;Horsepower&amp;quot;, y=&amp;quot;Miles_per_Gallon&amp;quot;, color=&amp;quot;Origin&amp;quot;)
+    plot = mo.ui.plotly(_plot)
+    return plot
+
+
+@app.cell
+def __():
+    return
+
+
+if __name__ == &amp;quot;__main__&amp;quot;:
+    app.run()
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;explanation&quot;&gt;Explanation:&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;CSV Data:&lt;&#x2F;strong&gt; We initialize Pokémon data as a multiline string and load it into a pandas DataFrame.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Marimo App:&lt;&#x2F;strong&gt; We create a Marimo app instance with &lt;code&gt;app = marimo.App(width=&quot;full&quot;)&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;UI Elements:&lt;&#x2F;strong&gt; We add a dropdown menu to select the Pokémon type.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Reactive Plot Function:&lt;&#x2F;strong&gt; The &lt;code&gt;update_plot&lt;&#x2F;code&gt; function creates a scatter plot of Attack vs. Defense, color-coded by Pokémon name and sized by HP. This function is wrapped in a &lt;code&gt;@app.cell&lt;&#x2F;code&gt; decorator to make it reactive.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Display and Run:&lt;&#x2F;strong&gt; We display the dropdown and plot using &lt;code&gt;mo.hstack()&lt;&#x2F;code&gt; and start the app with &lt;code&gt;app.run()&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;running-the-notebook&quot;&gt;Running the Notebook:&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Save the code in a file named &lt;code&gt;pokemon_plot.py&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Open a terminal and run the app using:&lt;pre&gt;&lt;code data-lang=&quot;bash&quot;&gt;marimo run pokemon_plot.py
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;The app will start and open in your default web browser, where you can interactively select Pokémon types and see the plot update in real time.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion:&lt;&#x2F;h3&gt;
+&lt;p&gt;Deploying Marimo notebooks as web apps is not just easy, it&#x27;s downright magical. With just a few commands, your interactive notebooks become shareable, interactive web apps, perfect for collaboration and presentation. So go ahead, turn those data insights into something everyone can see and interact with.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;verdict-as-of-july-9-2024&quot;&gt;Verdict (as of July 9, 2024):&lt;&#x2F;h4&gt;
+&lt;p&gt;Updating Marimo to the latest release was like trying to organize a whimsical inventor’s chaotic workshop. Despite my best efforts, I found myself unable to get even a basic &quot;Hello World&quot; example running. The project was in such a state of flux that even the directions in their README were impossible to replicate.&lt;&#x2F;p&gt;
+&lt;p&gt;At this point, the maintainers seem knee-deep in development, leaving the project in a &quot;dirty state&quot; where nothing is working as expected. So, I reluctantly have to set aside any updates or further thoughts on Marimo. Let&#x27;s hope that the maintainers sprinkle some magic dust soon and bring Marimo to life in ways we’ve only dreamed of. Until then, we wait with a mix of anticipation and amusement. Stay tuned, keep those fingers crossed, and enjoy the ride!&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;The example code provided here might no longer be supported or correct.&lt;&#x2F;strong&gt; With the project&#x27;s current instability, I won’t be attempting any updates or diving back into Marimo’s quirky world anytime soon.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;references&quot;&gt;References:&lt;&#x2F;h3&gt;
+&lt;p&gt;Explore more about Marimo and its features from these resources:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;blog.pyodide.org&#x2F;posts&#x2F;marimo&#x2F;&quot;&gt;marimo: a reactive Python notebook that runs in the browser&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;MachineLearning&#x2F;comments&#x2F;191rdwq&#x2F;p_i_built_marimo_an_opensource_reactive_python&#x2F;&quot;&gt;[P] I built marimo — an open-source reactive Python notebook that’s stored as a .py file, executable as a script, and deployable as an app.&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;medium.com&#x2F;@flyingjony&#x2F;can-marimo-replace-jupyter-notebooks-fb8c7210ad35&quot;&gt;Can Marimo replace Jupyter notebooks?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;marimo.io&#x2F;use-cases&quot;&gt;made with marimo&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+      </item>
+    </channel>
+</rss>

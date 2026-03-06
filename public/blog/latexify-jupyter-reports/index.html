@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  
+  <link rel="canonical" href="https:&#x2F;&#x2F;valiantone.github.io&#x2F;blog&#x2F;latexify-jupyter-reports&#x2F;">
+  
+
+  <title>TeXifying your Jupyter Reports | Frequently Bayesian</title>
+  <meta name="title" content="TeXifying your Jupyter Reports">
+  <meta name="description" content="Turn your Jupyter notebooks in to beautiful PDF reports!">
+  <meta name="author" content="Zubin J">
+  <link rel="sitemap" href="/sitemap.xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TeXifying your Jupyter Reports">
+  <meta property="og:description" content="Turn your Jupyter notebooks in to beautiful PDF reports!">
+  <meta property="og:url" content="https:&#x2F;&#x2F;valiantone.github.io&#x2F;blog&#x2F;latexify-jupyter-reports&#x2F;">
+  <meta property="og:image" content="https:&#x2F;&#x2F;valiantone.github.io/og-default.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="TeXifying your Jupyter Reports">
+  <meta property="twitter:description" content="Turn your Jupyter notebooks in to beautiful PDF reports!">
+  <meta property="twitter:image" content="https:&#x2F;&#x2F;valiantone.github.io/og-default.jpg">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="">
+
+  <link rel="stylesheet" href="/style.css">
+  <script src="/toggle-theme.js"></script>
+</head>
+<body>
+  <a id="skip-to-content" href="#main-content">Skip to content</a>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="top-nav-wrap">
+        <a href="/" class="logo">Frequently Bayesian</a>
+        <nav id="nav-menu">
+          <button class="hamburger-menu" aria-label="Open Menu" aria-expanded="false" aria-controls="menu-items">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="menu-icon">
+              <line x1="7" y1="12" x2="21" y2="12" class="line"></line>
+              <line x1="3" y1="6" x2="21" y2="6" class="line"></line>
+              <line x1="12" y1="18" x2="21" y2="18" class="line"></line>
+              <line x1="18" y1="6" x2="6" y2="18" class="close"></line>
+              <line x1="6" y1="6" x2="18" y2="18" class="close"></line>
+            </svg>
+          </button>
+          <ul id="menu-items" class="display-none">
+            <li><a href="/blog" class="active">Posts</a></li>
+            <li><a href="/tags" >Tags</a></li>
+            <li><a href="/about" >About</a></li>
+            <li>
+              <a href="/search" class="link-button" aria-label="search" title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg"><path d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"></path></svg>
+              </a>
+            </li>
+            <li>
+              <button id="theme-btn" title="Toggles light &amp; dark" aria-label="auto" aria-live="polite">
+                <svg xmlns="http://www.w3.org/2000/svg" id="moon-svg"><path d="M20.742 13.045a8.088 8.088 0 0 1-2.077.271c-2.135 0-4.14-.83-5.646-2.336a8.025 8.025 0 0 1-2.064-7.723A1 1 0 0 0 9.73 2.034a10.014 10.014 0 0 0-4.489 2.582c-3.898 3.898-3.898 10.243 0 14.143a9.937 9.937 0 0 0 7.072 2.93 9.93 9.93 0 0 0 7.07-2.929 10.007 10.007 0 0 0 2.583-4.491 1.001 1.001 0 0 0-1.224-1.224zm-2.772 4.301a7.947 7.947 0 0 1-5.656 2.343 7.953 7.953 0 0 1-5.658-2.344c-3.118-3.119-3.118-8.195 0-11.314a7.923 7.923 0 0 1 2.06-1.483 10.027 10.027 0 0 0 2.89 7.848 9.972 9.972 0 0 0 7.848 2.891 8.036 8.036 0 0 1-1.484 2.059z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" id="sun-svg"><path d="M6.993 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007S14.761 6.993 12 6.993 6.993 9.239 6.993 12zM12 8.993c1.658 0 3.007 1.349 3.007 3.007S13.658 15.007 12 15.007 8.993 13.658 8.993 12 10.342 8.993 12 8.993zM10.998 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2h-3zm17 0h3v2h-3zM4.219 18.363l2.12-2.122 1.415 1.414-2.12 2.122zM16.24 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.342 7.759 4.22 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"></path></svg>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="container"><hr></div>
+  </header>
+
+  
+<div class="container" style="display:flex; justify-content:flex-start; padding:0 0.5rem;">
+  <a href="javascript:history.back()" class="go-back">
+    <svg xmlns="http://www.w3.org/2000/svg"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>
+    <span>Go back</span>
+  </a>
+</div>
+<main id="main-content">
+  <h1 class="post-title">TeXifying your Jupyter Reports</h1>
+  <div class="card-datetime" style="margin:0.5rem 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path>
+      <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path>
+    </svg>
+    <span class="sr-only">Posted on:</span>
+    <span>May 08, 2017</span>
+  </div>
+  <article id="article" role="article" class="prose">
+    <blockquote>
+<p>The Jupyter project offers a host of great features; not only can you embed mathematical formulae in your cells with MathJax; you can convert the entirety of your notebook into simple and clean looking reports. With the <code>nbconvert</code> tool you can convert your notebooks into a whole suite of different formats - python, markdown and pdf.</p>
+</blockquote>
+<span id="continue-reading"></span>
+<p>However despite the functionality offered, converting to pdf can be a bit of a hassle due to dependency on <code>LaTex</code>, a powerful tool that can convert a markup language into a document. In principle all it takes is a single command to run the directive for conversion however due to dependencies on the forementioned <code>latex</code> package and other graphical libraries, the command is more likely to throw up a world of different errors.</p>
+<p>So let's assume you got that to run, output: you have a new report thats looks... wait are those lines of code overflowing the page margin? And why is it expanding all my dataframes to cover over 45 pages? Yes, generating automated reports can be a pain at times and that's why we've put together this guide to highlight the most important aspects of report generation, pre-processing and post-processing.</p>
+<p>In part 1 of this series we walk through the installation and setup guide to get your <code>nbconvert</code> tool running. In part 2 we will cover some basic templating to perform simple but effective generation of pdf documents.</p>
+<h2 id="welcome-to-the-jungle">Welcome to the Jungle</h2>
+<p>First let's do a quick whirlwind tour of all the possible errors. The conversion module can be kicked off with the following directive.</p>
+<pre><code>jupyter nbconvert --to PDF path/to/example.ipynb
+</code></pre>
+<p>So let's run that and see what we have..</p>
+<pre><code data-lang="python">nbconvert.utils.pandoc.PandocMissing: Pandoc wasn&#39;t found.
+Please check that pandoc is installed:
+http://pandoc.org/installing.html
+</code></pre>
+<p>If that error message makes little sense, well there's no need to panic; the most common of errors may sound daunting but all it's telling you is that your system is missing pandoc. Pandoc is a document conversion tool with multi-format support specializing in converting from one markup format to another. Conveniently you needn't have the entire pandoc suite of tools on your system, you only need LaTex as we mentioned earlier. So let's get LaTex installed. This however depends on your operating system. If you're on one of those operating systems that makes cute noises on startup and takes forever for system resources to load, this guide will probably be of little help to you.</p>
+<p>But seriously for Windows users, getting any flavor of LaTex installed is simpler than on any other OS (yeah, that's a first). Our recommendation would be <a rel="external" href="https://miktex.org/download">MiKTeX</a>, if you follow all the instructions on the official project page you should have a fulll installation of LaTex with all supporting packages. Now, add the system installation path to your environment variables and you should be ready to go!</p>
+<h3 id="mac-and-unix-users">Mac and UNIX Users</h3>
+<p>The first step is to get the base LaTex package installed before we can proceed with exploring further error messages.</p>
+<h4 id="on-mac">On Mac</h4>
+<blockquote>
+<p>brew cask install mactex</p>
+</blockquote>
+<p>This gets rid of the annoying Pandoc message hovever throws up a new error of its own.</p>
+<pre><code data-lang="python">OSError: xelatex not found on PATH, if you have not installed xelatex you may need to do so. Find further instructions at https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex.
+</code></pre>
+<p>Now, this error is due to a permission setting that was introduced in El Capitan. Under El Caitan and later releases (Sierra) writing to <code>/usr/</code> is no longer permitted. As a results the <code>/usr/textbin</code> path is removed - this causes complications since the symbolic link to <code>pdlatex</code> is now missing. The fix for this is quite simple really, all you need to do is relocate the link to the new default location (<code>/Library/TeX/texbin</code>) for TeX and hence reconfigure the TeX applications to look for directives in this location.</p>
+<p>The following snippet by user <a rel="external" href="https://tex.stackexchange.com/users/89949/moriambar">Moriambr</a> <a rel="external" href="https://tex.stackexchange.com/questions/274179/mactex-error-xelatex-command-not-found">here</a> addresses the issue of correcting the link for the <code>TeXLive</code> utility which fixed the problem in our case.</p>
+<pre><code>Reconfiguring TeXLive Utility: Version 1.23 of TEX Live Utility automatically detects the loss of /usr/texbin under El Capitan and prompts the user to automatically fix the problem. Previous versions need manual fixing:
+
++ Open TeXLive Utility Preferences
++ Click on Choose...
++ Press Shift + cmd + g
++ Enter /Library/TeX and click ok
++ Double click on texbin
+</code></pre>
+<p>That's all you need to set LaTex up correctly on OSX.</p>
+<h4 id="on-unix-linux-variants">On Unix/Linux variants</h4>
+<p>Depending on the flavor of your system, use the default system package manager to get the <code>texlive</code> package. In this post we will assume Ubuntu as the choice of variant.</p>
+<blockquote>
+<p>sudo apt-get install texlive texlive-latex-extra pandoc -y</p>
+</blockquote>
+<p><strong>Note:</strong> The atomic command mentioned above will perform a complete installation for Ubuntu users. There are certain different types of errors that you may still come across but all of them arise from a combination of missing packages, the most common being:</p>
+<pre><code data-lang="python">! LaTeX Error: File `adjustbox.sty&#39; not found.
+</code></pre>
+<p>This error arises when the <code>texlive-latex-extra</code> package is missing, use your packet manager to install this support package for fonts, images and layouts.</p>
+<h3 id="running-the-nbconvert-directive">Running the nbconvert directive</h3>
+<p>That does it! You're now ready to run the convert command from earlier, the console may throw a few warnings but those can be safely ignored.</p>
+<pre><code data-lang="python">jupyter nbconvert --to PDF path/to/example.ipynb
+</code></pre>
+<p>In part one of this post series, we've outlined how to go about setting up LaTex correctly on your machine irrespective of the underlying architecture. We also did a quick run-down of some common errors and fixes. This should get you started with compiling simpler pdf reports however there's still some advanced functionality to be covered. Customizing your reports can be as challenging due to lack of strong documentation. In Part 2 of this series we will continue to explore template based conversion and some common capabilities such as suppressing output in your reports.</p>
+
+  </article>
+
+  
+  <ul class="tags-container">
+    
+      
+<li class="tag ">
+  <a href="/tags/data-science/">
+    <svg xmlns="http://www.w3.org/2000/svg"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z"></path></svg>
+    &nbsp;<span>data-science</span>
+  </a>
+</li>
+
+    
+      
+<li class="tag ">
+  <a href="/tags/tools/">
+    <svg xmlns="http://www.w3.org/2000/svg"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z"></path></svg>
+    &nbsp;<span>tools</span>
+  </a>
+</li>
+
+    
+  </ul>
+  
+</main>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container"><hr></div>
+    <div class="footer-wrapper container">
+      <div class="social-icons">
+        <a href="https://github.com/valiantone" title="Frequently Bayesian on Github" class="link-button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg>
+        </a>
+        <a href="https://www.instagram.com/zrjohn/?hl=en" title="Frequently Bayesian on Instagram" class="link-button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><rect x="4" y="4" width="16" height="16" rx="4"></rect><circle cx="12" cy="12" r="3"></circle><line x1="16.5" y1="7.5" x2="16.5" y2="7.501"></line></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/zubin-john-953b4241/" title="Frequently Bayesian on LinkedIn" class="link-button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><line x1="8" y1="11" x2="8" y2="16"></line><line x1="8" y1="8" x2="8" y2="8.01"></line><line x1="12" y1="16" x2="12" y2="11"></line><path d="M16 16v-3a2 2 0 0 0 -4 0"></path></svg>
+        </a>
+        <a href="https://twitter.com/zubinj" title="Frequently Bayesian on Twitter" class="link-button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"></path></svg>
+        </a>
+      </div>
+      <div class="copyright-wrapper">
+        <span>Copyright &copy; 2026</span>
+        <span class="separator">&nbsp;|&nbsp;</span>
+        <span>All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      const menuBtn = document.querySelector(".hamburger-menu");
+      const menuIcon = document.querySelector(".menu-icon");
+      const menuItems = document.querySelector("#menu-items");
+      menuBtn?.addEventListener("click", () => {
+        const menuExpanded = menuBtn.getAttribute("aria-expanded") === "true";
+        menuIcon?.classList.toggle("is-active");
+        menuBtn.setAttribute("aria-expanded", menuExpanded ? "false" : "true");
+        menuBtn.setAttribute("aria-label", menuExpanded ? "Open Menu" : "Close Menu");
+        menuItems?.classList.toggle("display-none");
+      });
+    }
+    toggleNav();
+  </script>
+</body>
+</html>

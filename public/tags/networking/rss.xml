@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Frequently Bayesian - networking</title>
+      <link>https://valiantone.github.io</link>
+      <description>A blog featuring a variety of digital fundamentals ranging from career to code, data to design.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://valiantone.github.io/tags/networking/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Thu, 19 Sep 2024 15:30:00 +0000</lastBuildDate>
+      <item>
+          <title>A Whirlwind Intro to Servers in 2024</title>
+          <pubDate>Thu, 19 Sep 2024 15:30:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://valiantone.github.io/blog/serving-primer/</link>
+          <guid>https://valiantone.github.io/blog/serving-primer/</guid>
+          <description xml:base="https://valiantone.github.io/blog/serving-primer/">&lt;blockquote&gt;
+&lt;p&gt;This article is part of our &lt;strong&gt;CS101&lt;&#x2F;strong&gt; series, designed for new coders and learners who want to intuitively understand the computer science theory behind the applications they use. In this post, we explore web servers — what they are, why they matter, and how they revolutionized software delivery.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Servers are everywhere—powering everything from the websites we browse, to the apps we use, and the data we rely on daily. They’re so deeply integrated into our lives that many of us intuitively know they are the backbone of our digital world. But how much do we really understand about the inner workings of these systems?&lt;&#x2F;p&gt;
+&lt;p&gt;So, let’s take a step back and explore the roots of server technologies. Ready to dig in?&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;how-web-servers-changed-the-game&quot;&gt;How Web Servers Changed the Game&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;software_evolution.webp&quot; alt=&quot;Software Evolution&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;For years, software had been a tangible product&lt;&#x2F;strong&gt; — packaged in CDs or floppy disks, shipped off to users in boxes, and installed directly onto their machines. Whether it was a classic video game, office software, or early computer programs, one thing remained constant: the code ran &lt;strong&gt;client-side&lt;&#x2F;strong&gt;, meaning everything happened on the user’s machine. Software delivery was static, confined to what was contained in those hardware boxes, and updates or changes required entirely new shipments.&lt;&#x2F;p&gt;
+&lt;p&gt;This world of static, local software was &lt;strong&gt;revolutionized in 1990&lt;&#x2F;strong&gt; when &lt;strong&gt;Tim Berners-Lee&lt;&#x2F;strong&gt; ran the first &lt;strong&gt;web server&lt;&#x2F;strong&gt; at CERN. With the simple invention of the &lt;strong&gt;World Wide Web&lt;&#x2F;strong&gt;, we changed the landscape of how we think about software. For the first time, &lt;strong&gt;code could live elsewhere&lt;&#x2F;strong&gt;—on remote servers—allowing clients (in this case, web browsers) to send requests and retrieve fully functioning pages over the internet.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Here’s how it worked&lt;&#x2F;strong&gt;: a browser would send an IP address or domain name (DNS) request, and somewhere, through the magic of the internet, that request would land on a &lt;strong&gt;web server&lt;&#x2F;strong&gt;. The server’s job was to respond with the desired page, often generated dynamically on the fly. This was groundbreaking because, unlike client-side software that had to be installed on each machine, servers could now serve &lt;strong&gt;up-to-date content to countless users&lt;&#x2F;strong&gt; simultaneously, without being burdened by shipping or constant reinstallation.&lt;&#x2F;p&gt;
+&lt;p&gt;The big deal about this was that &lt;strong&gt;software no longer had to live on your computer&lt;&#x2F;strong&gt;. Now, it could live on the web server, and anyone with a browser could just “request” what they needed from that server. This meant that the software could be updated or changed whenever the server wanted, and everyone using it would get the new version instantly—&lt;strong&gt;no more CDs or downloads needed&lt;&#x2F;strong&gt;. This was the birth of &lt;strong&gt;dynamic web applications&lt;&#x2F;strong&gt;, marking a shift in how we interact with software.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;from-code-to-cloud-why-we-needed-containers&quot;&gt;From Code to Cloud: Why We Needed Containers&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;containerized_services.webp&quot; alt=&quot;Containerized Services&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Once web servers made it possible to deliver software remotely, the next challenge was consistency. In the CD and floppy disk era, you shipped an entire, self-contained software package. But in the cloud era, apps were deployed to shared servers that needed to be configured just right—leading to the infamous “it works on my machine” problem. As software became more complex and global, deployment needed to be reliable, repeatable, and environment-agnostic.&lt;&#x2F;p&gt;
+&lt;p&gt;That’s where containerization came in. With tools like Docker, developers began packaging not just their code, but everything it needed to run: dependencies, config files, and runtime environments. These containers could be spun up anywhere—from a laptop to a data center to the cloud—with guaranteed consistency. It was like shipping a CD again, but this time your entire server came bundled inside.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;putting-theory-to-practice&quot;&gt;Putting Theory to Practice&lt;&#x2F;h2&gt;
+&lt;p&gt;Ready to go beyond theory? Our application for the tutorial today is inspired by a problem I faced as a CS student: there simply weren’t great tools to practice SQL outside of clunky setups like MS Access or OracleDB. To address this gap, we’ll be building a browser-based playground—something in the spirit of SQLBolt—that allows students to write, run, and learn SQL directly in the browser. This toy app will be our hands-on use case as we explore Docker, databases, and deployment. By the end of this tutorial, you’ll have a working prototype and a deeper understanding of how modern backend services come together.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;tutorial&quot;&gt;Tutorial&lt;&#x2F;h3&gt;
+&lt;p&gt;In our &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;TechLabs-Berlin&#x2F;mlds-tools&#x2F;tree&#x2F;main&#x2F;workshops&#x2F;ww_summer_23&#x2F;README.md&quot;&gt;TechLabs Berlin Summer 2023 workshop&lt;&#x2F;a&gt;, we walked through the fundamentals of Docker and containerization—a must-have skill for modern backend, data, and infrastructure engineers. The workshop covered the basics of how containers work and why they matter, then jumped into a hands-on project deploying a toy application backed by a PostgreSQL database.&lt;&#x2F;p&gt;
+&lt;p&gt;We also explored optional workflows for deploying apps to the cloud using platforms like Heroku, helping developers understand the lifecycle from development to production. This tutorial is perfect for anyone looking to gain confidence with cloud-native tools and see firsthand how abstract server concepts translate into real-world deployment. Whether you&#x27;re experimenting with containers for the first time or looking to expand your DevOps muscle, this guide is your launchpad.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;outro&quot;&gt;Outro&lt;&#x2F;h2&gt;
+&lt;p&gt;From floppy disks to dynamic web apps, from static sites to containerized deployments—servers have shaped every era of digital innovation. Understanding how they evolved isn’t just trivia; it&#x27;s foundational knowledge for anyone looking to build modern, scalable applications. In this post, we traced that journey—from Tim Berners-Lee’s first server to deploying with Docker, Heroku, and PostgreSQL, and into the hands-on landscape of containerization&lt;&#x2F;p&gt;
+&lt;p&gt;This isn’t just a story about the past or a toolkit for today—it’s a glimpse into the future of how software is built, served, and evolved. Whether you’re coding solo or collaborating on global projects, understanding the role of servers, containers, and modern deployment platforms will make you a more confident, capable, and creative technologist. Let these lessons guide your experiments, and let curiosity lead the way.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;sources-links&quot;&gt;Sources &amp;amp; Links&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.docker.com&#x2F;&quot;&gt;Docker&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.heroku.com&#x2F;&quot;&gt;Heroku&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.postgresql.org&#x2F;&quot;&gt;PostgreSQL&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;sqlbolt.com&#x2F;&quot;&gt;SQLBolt – Learn SQL interactively&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;TechLabs-Berlin&#x2F;mlds-tools&#x2F;tree&#x2F;main&#x2F;workshops&#x2F;ww_summer_23&#x2F;README.md&quot;&gt;TechLabs Berlin Workshop on Docker&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;home.cern&#x2F;science&#x2F;computing&#x2F;birth-web&quot;&gt;Tim Berners-Lee and the First Web Server – CERN&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+      </item>
+    </channel>
+</rss>
