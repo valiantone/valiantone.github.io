@@ -4,7 +4,7 @@ export const SITE: Site = {
   website: "https://valiantone.github.io", // replace this with your deployed domain
   author: "Zubin J",
   desc: "A blog featuring a variety of digital fundamentals ranging from career to code, data to design.",
-  title: "Frequent Bayesianism",
+  title: "Frequently Bayesian",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 3,
