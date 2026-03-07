@@ -451,10 +451,14 @@ footer {
 #recent-posts {
   padding: 1.75rem 0 1rem;
 
-  h2 {
-    font-size: 1.5rem;
+  > h2 {
+    font-size: 1.125rem;
     font-weight: 600;
     letter-spacing: 0.025em;
+
+    @media (min-width: 640px) {
+      font-size: 1.25rem;
+    }
   }
 
   ul {
@@ -490,16 +494,25 @@ footer {
 
 .card-title {
   display: inline-block;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 500;
   color: skin(--color-accent);
   text-decoration: none;
   text-decoration-style: dashed;
   text-underline-offset: 4px;
 
+  @media (min-width: 640px) {
+    font-size: 1.125rem;
+  }
+
   &:hover {
     text-decoration: underline;
     text-decoration-style: dashed;
+  }
+
+  h2, h3 {
+    font-size: inherit;
+    font-weight: inherit;
   }
 }
 
@@ -553,11 +566,11 @@ footer {
   }
 
   > h1 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
 
     @media (min-width: 640px) {
-      font-size: 1.875rem;
+      font-size: 1.5rem;
     }
   }
 
@@ -570,9 +583,13 @@ footer {
 
 /* ===== Single Post ===== */
 .post-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: skin(--color-accent);
+
+  @media (min-width: 640px) {
+    font-size: 1.5rem;
+  }
 }
 
 .go-back {
