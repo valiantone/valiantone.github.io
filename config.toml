@@ -17,4 +17,4 @@ include_content = true
 [extra]
 author = "Zubin J"
 og_image = "og-default.jpg"
-post_per_page = 3
+post_per_page = 5
