@@ -1,4 +1,4 @@
-base_url = "https://bifunctional.xyz/frequently-bayesian"
+base_url = "https://frequentlybayesian.bifunctional.xyz"
 title = "Frequently Bayesian"
 description = "A blog featuring a variety of digital fundamentals ranging from career to code, data to design."
 compile_sass = true
