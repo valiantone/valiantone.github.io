@@ -6,7 +6,7 @@ html[data-theme="light"] {
   --color-accent: 191, 19, 112;      /* deep pink #bf1370 */
   --color-card: 224, 221, 214;       /* muted cream #e0ddd6 */
   --color-card-muted: 209, 206, 199; /* darker cream #d1cec7 */
-  --color-border: 214, 211, 204;     /* subtle cream border #d6d3cc */
+  --color-border: 0, 99, 77;          /* teal-600 #00634d — forest green, matches dark theme */
 }
 
 html[data-theme="dark"] {
@@ -48,7 +48,7 @@ body {
   color: skin(--color-text-base);
   font-family: "IBM Plex Mono", monospace;
   font-size: 1rem;
-  line-height: 1.75;
+  line-height: 1.65;
 }
 
 ::selection {
@@ -81,7 +81,7 @@ img {
 
 hr {
   border: 0;
-  border-top: 1px solid skin(--color-border);
+  border-top: 2px solid skin(--color-border);
   margin: 0;
 }
 
@@ -144,7 +144,7 @@ header {
 
   @media (min-width: 640px) {
     align-items: center;
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
   }
 }
 
@@ -177,7 +177,7 @@ nav#nav-menu {
   }
 }
 
-nav ul {
+#nav-menu ul {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -193,7 +193,7 @@ nav ul {
   }
 }
 
-nav ul li {
+#nav-menu ul li {
   grid-column: span 2;
   display: flex;
   align-items: center;
@@ -205,7 +205,7 @@ nav ul li {
   }
 }
 
-nav ul li a {
+#nav-menu ul li a {
   display: block;
   width: 100%;
   padding: 0.75rem 1rem;
@@ -256,7 +256,11 @@ nav ul li a {
 .menu-icon.is-active .close { opacity: 1; }
 
 .display-none {
-  display: none !important;
+  display: none;
+
+  @media (min-width: 640px) {
+    display: flex !important;
+  }
 }
 
 /* --- Theme Toggle Button --- */
@@ -333,7 +337,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 1rem;
+  padding: 1rem;
 
   @media (min-width: 640px) {
     flex-direction: row-reverse;
@@ -386,17 +390,17 @@ footer {
 
 /* ===== Hero Section ===== */
 #hero {
-  padding: 2rem 0 1.5rem;
+  padding: 1.25rem 0 1rem;
 
-  h1 {
+  h2 {
     display: inline-block;
-    font-size: 1.875rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    margin: 1rem 0.5rem 1rem 0;
+    margin: 0.75rem 0.5rem 0.75rem 0;
 
     @media (min-width: 640px) {
-      font-size: 3rem;
-      margin: 2rem 0.5rem 2rem 0;
+      font-size: 2.25rem;
+      margin: 1.25rem 0.5rem 1.25rem 0;
     }
   }
 
@@ -445,17 +449,22 @@ footer {
 /* ===== Post Sections ===== */
 #featured,
 #recent-posts {
-  padding: 3rem 0 1.5rem;
+  padding: 1.75rem 0 1rem;
 
   h2 {
     font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 0.025em;
   }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
 }
 
 .all-posts-btn-wrapper {
-  margin: 2rem 0;
+  margin: 1.25rem 0;
   text-align: center;
 
   a {
@@ -476,7 +485,7 @@ footer {
 
 /* ===== Card (Post Listing Item) ===== */
 .card {
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 
 .card-title {
@@ -513,10 +522,11 @@ footer {
 /* ===== Breadcrumbs ===== */
 .breadcrumb {
   max-width: 48rem;
-  margin: 2rem auto 0.25rem;
+  margin: 1.25rem auto 0.25rem;
   padding: 0 1rem;
+  text-align: left;
 
-  ul { list-style: none; }
+  ul { list-style: none; padding: 0; }
   li { display: inline; }
 
   a {
@@ -535,7 +545,12 @@ footer {
   max-width: 48rem;
   margin: 0 auto;
   width: 100%;
-  padding: 0 1rem 3rem;
+  padding: 0 1rem 2rem;
+
+  > ul {
+    list-style: none;
+    padding: 0;
+  }
 
   > h1 {
     font-size: 1.5rem;
@@ -547,8 +562,8 @@ footer {
   }
 
   > p {
-    margin-bottom: 1.5rem;
-    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0.25rem;
     font-style: italic;
   }
 }
@@ -570,7 +585,7 @@ footer {
   font-family: inherit;
   font-size: inherit;
   margin-bottom: 0.5rem;
-  margin-top: 2rem;
+  margin-top: 1.25rem;
   padding: 0;
   text-decoration: none;
 
@@ -585,7 +600,8 @@ footer {
 
 .tags-container {
   list-style: none;
-  margin: 2rem 0;
+  padding: 0;
+  margin: 1.25rem 0;
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
@@ -744,14 +760,14 @@ footer {
 /* ===== Prose (Article Content) ===== */
 .prose {
   max-width: 48rem;
-  margin: 2rem auto;
+  margin: 1.25rem auto;
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.75;
 
   h1, h2, h3, h4, h5, h6 {
     color: skin(--color-text-base);
-    margin-bottom: 0.75rem;
-    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
     font-weight: 600;
     line-height: 1.3;
   }

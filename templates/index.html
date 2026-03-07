@@ -4,7 +4,7 @@
 {% block body %}
 <main id="main-content">
   <section id="hero" class="container">
-    <h1>Mingalaba</h1>
+    <h2>Mingalaba</h2>
     <a target="_blank" href="/rss.xml" class="rss-link" aria-label="rss feed" title="RSS Feed">
       <svg xmlns="http://www.w3.org/2000/svg" class="rss-icon">
         <path d="M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z"></path>
@@ -33,7 +33,7 @@
     </div>
   </section>
 
-  <div class="container"><hr></div>
+  <hr>
 
   {% set blog = get_section(path="blog/_index.md") %}
   {% set all_posts = blog.pages %}
@@ -49,7 +49,7 @@
       {% endfor %}
     </ul>
   </section>
-  <div class="container"><hr></div>
+  <hr>
   {% endif %}
 
   {# Recent posts (non-featured, max 4) #}
