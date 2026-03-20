@@ -1,4 +1,4 @@
-++ 
++++ 
 title = "Working Across Frontend, Backend & Data with JSON"
 date = 2026-03-20T10:45:00Z
 slug = "json-contracts-fullstack"
@@ -10,7 +10,7 @@ tags = ["json", "api", "fullstack", "backend", "frontend", "data", "ai"]
 [extra]
 featured = true
 author = "Zubin J"
-++
++++
 
 ## JSON = Contract
 
