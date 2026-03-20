@@ -9,6 +9,9 @@ taxonomies = [
   { name = "tags", feed = true, paginate_by = 10 },
 ]
 
+[markdown.highlighting]
+theme = "github-dark"
+
 [search]
 include_title = true
 include_description = true

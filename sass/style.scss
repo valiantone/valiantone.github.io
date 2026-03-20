@@ -829,6 +829,7 @@ footer {
 
   pre {
     margin: 1.5rem 0;
+    padding: 1rem;
     border-radius: 0.375rem;
     overflow-x: auto;
 
@@ -838,6 +839,23 @@ footer {
       border-radius: 0;
       white-space: pre;
     }
+  }
+
+  /* Giallo syntax highlighting */
+  .giallo-l {
+    display: inline-block;
+    min-height: 1lh;
+    width: 100%;
+  }
+
+  .giallo-ln {
+    display: inline-block;
+    user-select: none;
+    margin-right: 0.4em;
+    padding: 0.4em;
+    min-width: 3ch;
+    text-align: right;
+    opacity: 0.8;
   }
 
   ul, ol {
