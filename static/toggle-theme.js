@@ -18,6 +18,11 @@ function reflectPreference() {
   document.firstElementChild.setAttribute("data-theme", themeValue);
   document.querySelector("#theme-btn")?.setAttribute("aria-label", themeValue);
 
+  const gialloLink = document.getElementById("giallo-theme");
+  if (gialloLink) {
+    gialloLink.href = themeValue === "dark" ? "/giallo-dark.css" : "/giallo-light.css";
+  }
+
   const body = document.body;
   if (body) {
     const bgColor = window.getComputedStyle(body).backgroundColor;

@@ -51,6 +51,11 @@ body {
   line-height: 1.65;
 }
 
+code, kbd, pre {
+  font-family: "JetBrains Mono", "IBM Plex Mono", monospace;
+  font-feature-settings: "liga" 1, "calt" 1;
+}
+
 ::selection {
   background-color: skin-a(--color-accent, 0.7);
   color: skin(--color-fill);
@@ -820,22 +825,31 @@ footer {
   }
 
   code {
-    background-color: skin-a(--color-card, 0.75);
+    background-color: skin-a(--color-card, 0.9);
     color: skin(--color-accent);
-    padding: 0.2rem 0.45rem;
-    border-radius: 0.25rem;
-    font-size: 0.875em;
-    border: 1px solid skin-a(--color-border, 0.4);
+    padding: 0.15rem 0.45rem;
+    border-radius: 0.3rem;
+    font-size: 0.83em;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  html[data-theme="dark"] & :not(pre) > code {
+    background-color: skin(--color-card);
   }
 
   pre {
-    margin: 1.5rem 0;
-    padding: 1.25rem;
+    position: relative;
+    margin: 1.75rem 0;
+    padding: 1.25rem 1.5rem;
     border-radius: 0.5rem;
-    border: 1px solid skin-a(--color-border, 0.5);
+    border: 1px solid skin-a(--color-border, 0.35);
+    border-top: 3px solid skin(--color-accent);
     overflow-x: auto;
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    box-shadow: 0 4px 20px skin-a(--color-text-base, 0.08),
+                0 1px 4px skin-a(--color-text-base, 0.05);
 
     code {
       background: none;
@@ -845,10 +859,11 @@ footer {
       border-radius: 0;
       white-space: pre;
       font-size: inherit;
+      font-weight: inherit;
+      letter-spacing: inherit;
     }
   }
 
-  /* Giallo syntax highlighting */
   .giallo-l {
     display: inline-block;
     min-height: 1lh;
