@@ -5,7 +5,7 @@ slug = "json-contracts-fullstack"
 description = "A minimal, practical guide to using JSON as the contract across frontend, backend, data, and AI systems."
 
 [taxonomies]
-tags = ["json", "api", "fullstack", "backend", "frontend", "data", "ai"]
+tags = ["json", "api", "fullstack", "backend", "frontend", "data", "ai", "cors"]
 
 [extra]
 featured = true
@@ -73,6 +73,33 @@ fetch("https://api.yourapp.com/score/123")
 ```
 
 Frontend only depends on **JSON format**.
+
+### A Quick Note on CORS
+
+If you're testing this locally, your browser will likely block the request with an error like:
+
+> Access to fetch at 'http://localhost:8000/score/123' from origin 'http://localhost:3000' has been blocked by CORS policy.
+
+This is **CORS** (Cross-Origin Resource Sharing). Browsers block requests between different origins (different domain, port, or protocol) by default. It's a security feature — your frontend at `localhost:3000` and your API at `localhost:8000` are considered different origins.
+
+This isn't a bug in your code. It's the browser protecting users from malicious scripts making requests to APIs they shouldn't access.
+
+**The fix lives on the backend.** Your API needs to explicitly allow requests from your frontend's origin. In FastAPI:
+
+```python
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # your frontend origin
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+```
+
+In production, replace `localhost:3000` with your actual frontend domain. Avoid using `"*"` for `allow_origins` in production — it means "allow any website to call your API", which is rarely what you want.
+
+> **Rule of thumb:** If the browser blocks it, the backend needs to allow it. Frontend can't fix CORS — only the server can.
 
 ## Swap Logic: Data / ML Integration
 
