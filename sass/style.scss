@@ -821,23 +821,30 @@ footer {
 
   code {
     background-color: skin-a(--color-card, 0.75);
-    color: skin(--color-text-base);
-    padding: 0.15rem 0.4rem;
+    color: skin(--color-accent);
+    padding: 0.2rem 0.45rem;
     border-radius: 0.25rem;
-    font-size: 0.9em;
+    font-size: 0.875em;
+    border: 1px solid skin-a(--color-border, 0.4);
   }
 
   pre {
     margin: 1.5rem 0;
-    padding: 1rem;
-    border-radius: 0.375rem;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid skin-a(--color-border, 0.5);
     overflow-x: auto;
+    font-size: 0.9rem;
+    line-height: 1.6;
 
     code {
       background: none;
+      color: inherit;
       padding: 0;
+      border: none;
       border-radius: 0;
       white-space: pre;
+      font-size: inherit;
     }
   }
 

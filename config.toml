@@ -10,7 +10,7 @@ taxonomies = [
 ]
 
 [markdown.highlighting]
-theme = "github-dark"
+theme = "catppuccin-mocha"
 
 [search]
 include_title = true
