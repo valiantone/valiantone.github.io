@@ -10,12 +10,15 @@
 {% block tw_desc %}{{ page.description }}{% endblock %}
 
 {% block body %}
+{% set show_back = config.extra.show_back_button | default(value=true) %}
+{% if show_back %}
 <div class="container">
   <a href="javascript:history.back()" class="go-back">
     <svg xmlns="http://www.w3.org/2000/svg"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>
     <span>Go back</span>
   </a>
 </div>
+{% endif %}
 <main id="main-content">
   <h1 class="post-title">{{ page.title }}</h1>
   <div class="card-datetime" style="margin:0.5rem 0;">

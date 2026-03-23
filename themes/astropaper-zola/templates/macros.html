@@ -1,0 +1,49 @@
+{% macro post_card(page, heading="h2") %}
+<li class="card">
+  <a href="{{ page.permalink }}" class="card-title">
+    {% if heading == "h2" %}<h2>{{ page.title }}</h2>{% else %}<h3>{{ page.title }}</h3>{% endif %}
+  </a>
+  <div class="card-datetime">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path>
+      <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path>
+    </svg>
+    <span class="sr-only">Posted on:</span>
+    <span>{{ page.date | date(format="%B %d, %Y") }}</span>
+  </div>
+  <p>{{ page.description }}</p>
+</li>
+{% endmacro %}
+
+{% macro tag_item(name, size="sm") %}
+<li class="tag {% if size == 'lg' %}tag-lg{% endif %}">
+  <a href="/tags/{{ name | lower | slugify }}/">
+    <svg xmlns="http://www.w3.org/2000/svg"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z"></path></svg>
+    &nbsp;<span>{{ name | lower }}</span>
+  </a>
+</li>
+{% endmacro %}
+
+{# Social icon macro — maps icon name to Tabler SVG (matching AstroPaper) #}
+{% macro social_icon(icon) %}
+{% if icon == "github" %}
+<svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg>
+{% elif icon == "instagram" %}
+<svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><rect x="4" y="4" width="16" height="16" rx="4"></rect><circle cx="12" cy="12" r="3"></circle><line x1="16.5" y1="7.5" x2="16.5" y2="7.501"></line></svg>
+{% elif icon == "linkedin" %}
+<svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><line x1="8" y1="11" x2="8" y2="16"></line><line x1="8" y1="8" x2="8" y2="8.01"></line><line x1="12" y1="16" x2="12" y2="11"></line><path d="M16 16v-3a2 2 0 0 0 -4 0"></path></svg>
+{% elif icon == "twitter" %}
+<svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"></path></svg>
+{% elif icon == "mail" %}
+<svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><rect x="3" y="5" width="18" height="14" rx="2"></rect><polyline points="3 7 12 13 21 7"></polyline></svg>
+{% endif %}
+{% endmacro %}
+
+{# Render a list of social icons from config.extra.social #}
+{% macro social_links(links) %}
+{% for link in links %}
+  <a href="{{ link.href }}" title="{{ link.name }}" class="link-button">
+    {{ self::social_icon(icon=link.icon) }}
+  </a>
+{% endfor %}
+{% endmacro %}

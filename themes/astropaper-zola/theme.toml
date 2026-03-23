@@ -1,0 +1,35 @@
+name = "astropaper-zola"
+description = "A minimal, accessible and SEO-friendly blog theme for Zola. Port of AstroPaper (Astro)."
+license = "MIT"
+min_version = "0.19.0"
+
+[author]
+name = "Zubin J"
+homepage = "https://blog.bifunctional.xyz"
+
+[original]
+author = "Sat Naing"
+homepage = "https://satnaing.dev"
+repo = "https://github.com/satnaing/astro-paper"
+
+[extra]
+# Number of posts shown on the index page (AstroPaper: postPerIndex)
+post_per_index = 4
+
+# Show "Go back" button on post pages (AstroPaper: showBackButton)
+show_back_button = true
+
+# Enable light/dark mode toggle (AstroPaper: lightAndDarkMode)
+light_and_dark_mode = true
+
+# Default OG image path relative to static/
+og_image = "og-default.jpg"
+
+# Social links rendered in footer and hero section.
+# Supported icons: github, instagram, linkedin, twitter, mail, rss
+# Each entry needs: name, href, icon
+# Example:
+# [[extra.social]]
+# name = "GitHub"
+# href = "https://github.com/username"
+# icon = "github"

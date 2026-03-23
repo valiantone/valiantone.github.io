@@ -1,6 +1,7 @@
 base_url = "https://blog.bifunctional.xyz"
 title = "Frequently Bayesian"
 description = "A blog featuring a variety of digital fundamentals ranging from career to code, data to design."
+theme = "astropaper-zola"
 compile_sass = true
 build_search_index = true
 generate_feeds = true
@@ -22,4 +23,26 @@ include_content = true
 [extra]
 author = "Zubin J"
 og_image = "og-default.jpg"
-post_per_page = 5
+post_per_index = 4
+show_back_button = true
+light_and_dark_mode = true
+
+[[extra.social]]
+name = "GitHub"
+href = "https://github.com/valiantone"
+icon = "github"
+
+[[extra.social]]
+name = "Instagram"
+href = "https://www.instagram.com/zrjohn/?hl=en"
+icon = "instagram"
+
+[[extra.social]]
+name = "LinkedIn"
+href = "https://www.linkedin.com/in/zubin-john-953b4241/"
+icon = "linkedin"
+
+[[extra.social]]
+name = "Twitter"
+href = "https://twitter.com/zubinj"
+icon = "twitter"

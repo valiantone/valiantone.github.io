@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+
+{% block body %}
+<main id="main-content">
+  <section id="hero" class="container">
+    <h2>Mingalaba</h2>
+    <a target="_blank" href="/rss.xml" class="rss-link" aria-label="rss feed" title="RSS Feed">
+      <svg xmlns="http://www.w3.org/2000/svg" class="rss-icon">
+        <path d="M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z"></path>
+        <path d="M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z"></path>
+        <circle cx="6" cy="18" r="2"></circle>
+      </svg>
+    </a>
+    <p>Frequent Bayesianism is a cheeky, made up term that invokes an outdated, ideological debate in the field of probability and data science. With little meaning it serves as great name for a personal publication.</p>
+    <p>This blog features a variety of digital fundamentals ranging from career to code, data to design.</p>
+    {% if config.extra.social is defined %}
+    <div class="social-wrapper">
+      <div class="social-links">Social Links:</div>
+      <div class="social-icons">
+        {{ macros::social_links(links=config.extra.social) }}
+      </div>
+    </div>
+    {% endif %}
+  </section>
+
+  <hr>
+
+{% set blog = get_section(path="posts/_index.md") %}
+  {% set all_posts = blog.pages %}
+
+  {# Featured posts #}
+  {% set featured = all_posts | filter(attribute="extra.featured", value=true) %}
+  {% if featured | length > 0 %}
+  <section id="featured" class="container">
+    <h2>Featured</h2>
+    <ul>
+      {% for page in featured %}
+        {{ macros::post_card(page=page, heading="h3") }}
+      {% endfor %}
+    </ul>
+  </section>
+  <hr>
+  {% endif %}
+
+  {# Recent posts (non-featured, max 4) #}
+  <section id="recent-posts" class="container">
+    <h2>Recent Posts</h2>
+    <ul>
+      {% set post_limit = config.extra.post_per_index | default(value=4) %}
+      {% set count = 0 %}
+      {% for page in all_posts %}
+        {% if not page.extra.featured and count < post_limit %}
+          {{ macros::post_card(page=page, heading="h3") }}
+          {% set_global count = count + 1 %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <div class="all-posts-btn-wrapper">
+<a href="/posts">
+        All Posts
+        <svg xmlns="http://www.w3.org/2000/svg"><path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path></svg>
+      </a>
+    </div>
+  </section>
+</main>
+{% endblock %}
