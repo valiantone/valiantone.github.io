@@ -511,21 +511,17 @@ footer {
 
 /* ===== Card (Post Listing Item) ===== */
 .card {
-  margin: 1rem 0;
+  margin: 1.5rem 0;  /* AstroPaper: my-6 */
 }
 
 .card-title {
   display: inline-block;
-  font-size: 1rem;
+  font-size: 1.125rem;  /* AstroPaper: text-lg */
   font-weight: 500;
   color: skin(--color-accent);
   text-decoration: none;
   text-decoration-style: dashed;
   text-underline-offset: 4px;
-
-  @media (min-width: 640px) {
-    font-size: 1.125rem;
-  }
 
   &:hover {
     text-decoration: underline;
