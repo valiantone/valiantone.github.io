@@ -654,8 +654,8 @@ footer {
     svg {
       width: 1.5rem;
       height: 1.5rem;
-      margin-right: -1.25rem;
-      transform: scale(0.95);
+      margin-right: -0.25rem;
+      flex-shrink: 0;
       fill: skin(--color-text-base);
       opacity: 0.8;
     }
@@ -836,6 +836,10 @@ footer {
 
   html[data-theme="dark"] & :not(pre) > code {
     background-color: skin(--color-card);
+  }
+
+  html[data-theme="dark"] & pre.z-code {
+    background-color: #141b1e;
   }
 
   pre {

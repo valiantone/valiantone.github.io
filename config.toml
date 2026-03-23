@@ -12,8 +12,7 @@ taxonomies = [
 [markdown.highlighting]
 style = "class"
 light_theme = "rose-pine-moon"
-dark_theme = "Everblush Theme"
-extra_themes = ["themes/everblush-color-theme.json"]
+dark_theme = "kanagawa-wave"
 
 [search]
 include_title = true
