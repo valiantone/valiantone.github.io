@@ -45,4 +45,31 @@ We cover a breadth of different topics on this blog.
 
 - Volunteering & Community Projects
 
-If you would like to provide any feedback or suggestions for future content, contact me via my [email](mailto:zrjohn@yahoo.com).
+## Legal & Privacy (Personal Blog)
+
+Quick note so you know how this site works behind the scenes.
+
+This is a personal, non-commercial blog run by one volunteer educator and technologist.
+
+### Who runs this site?
+
+- Zubin J
+- Email: [admin@bifunctional.xyz](mailto:admin@bifunctional.xyz)
+
+### What gets processed when you visit
+
+Like most websites, the hosting provider may process basic technical logs (for example: IP address, timestamp, requested URL, and user agent) to keep the site running and secure.
+
+### Privacy defaults here
+
+- I do not intentionally run advertising or marketing trackers on this site.
+- There is currently no newsletter or user account system.
+- Your light/dark theme preference is stored locally in your browser (`localStorage`) so the site remembers your choice.
+
+### Third-party services
+
+This site loads Google Fonts from `fonts.googleapis.com` and `fonts.gstatic.com`, which may involve transmitting technical request data (including IP address) to Google.
+
+Links to external platforms (e.g. GitHub, LinkedIn, Instagram, and X/Twitter) follow those platforms' own privacy policies once you leave this site.
+
+If you have questions, corrections, or feedback, feel free to email me at [admin@bifunctional.xyz](mailto:admin@bifunctional.xyz).
