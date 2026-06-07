@@ -30,13 +30,20 @@
   {% set all_posts = blog.pages %}
 
   {# Featured posts #}
-  {% set featured = all_posts | filter(attribute="extra.featured", value=true) %}
-  {% if featured | length > 0 %}
+  {% set_global featured_count = 0 %}
+  {% for page in all_posts %}
+    {% if page.extra.featured is defined and page.extra.featured == true %}
+      {% set_global featured_count = featured_count + 1 %}
+    {% endif %}
+  {% endfor %}
+  {% if featured_count > 0 %}
   <section id="featured" class="container">
     <h2>Featured</h2>
     <ul>
-      {% for page in featured %}
-        {{ macros::post_card(page=page, heading="h3") }}
+      {% for page in all_posts %}
+        {% if page.extra.featured is defined and page.extra.featured == true %}
+          {{ macros::post_card(page=page, heading="h3") }}
+        {% endif %}
       {% endfor %}
     </ul>
   </section>

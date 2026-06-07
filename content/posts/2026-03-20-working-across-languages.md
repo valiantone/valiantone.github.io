@@ -8,7 +8,7 @@ description = "A minimal, practical guide to using JSON as the contract across f
 tags = ["json", "api", "fullstack", "backend", "frontend", "data", "ai", "cors"]
 
 [extra]
-featured = true
+featured = false
 author = "Zubin J"
 +++
 
