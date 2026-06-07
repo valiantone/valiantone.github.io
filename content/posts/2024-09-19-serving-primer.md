@@ -8,7 +8,7 @@ description = "Get a contextual intro to web servers and start hands-on with a m
 tags = ["cs-fundamentals", "networking", "serving", "backends"]
 
 [extra]
-featured = true
+featured = false
 +++
 
 > This article is part of our **CS101** series, designed for new coders and learners who want to intuitively understand the computer science theory behind the applications they use. In this post, we explore web servers — what they are, why they matter, and how they revolutionized software delivery.

@@ -9,7 +9,7 @@ draft = false
 tags = ["bifunctional-labs", "education", "ai", "community", "builders", "studio-notes"]
 
 [extra]
-featured = false
+featured = true
 author = "Zubin J"
 +++
 

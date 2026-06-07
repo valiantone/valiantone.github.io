@@ -43,14 +43,14 @@
   <hr>
   {% endif %}
 
-  {# Recent posts (non-featured, max 4) #}
+  {# Recent posts (latest posts, max 4) #}
   <section id="recent-posts" class="container">
     <h2>Recent Posts</h2>
     <ul>
       {% set post_limit = config.extra.post_per_index | default(value=4) %}
       {% set count = 0 %}
       {% for page in all_posts %}
-        {% if not page.extra.featured and count < post_limit %}
+        {% if count < post_limit %}
           {{ macros::post_card(page=page, heading="h3") }}
           {% set_global count = count + 1 %}
         {% endif %}

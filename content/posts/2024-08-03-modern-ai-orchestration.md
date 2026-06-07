@@ -8,7 +8,7 @@ description = "Master modern AI orchestration with a hands-on project and step-b
 tags = ["data-engineering", "artificial-intelligence", "ai-orchestration", "workflows", "elt"]
 
 [extra]
-featured = true
+featured = false
 +++
 
 > In the rapidly evolving landscape of technology, treating AI and data workflows the same is a significant oversight that can hinder progress. Many organizations have discovered that the requirements for AI pipelines are far more complex than traditional ETL (Extract, Transform, Load) pipelines. This realization has paved the way for modern AI orchestration, which is designed to meet the demands of today’s sophisticated workloads.

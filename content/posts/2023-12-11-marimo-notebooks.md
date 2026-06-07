@@ -8,7 +8,7 @@ description = "The next generation python notebooks where every program is also 
 tags = ["data-science", "tools", "notebooks", "interactive-python"]
 
 [extra]
-featured = true
+featured = false
 +++
 
 > Ever since its inception in 2014, Jupyter Notebooks have been the go-to for data enthusiasts, scientists, and educators alike. Their interactive interface and multi-language support have made them indispensable. But let’s face it, even the best tools have their quirks and room for improvement. Despite being a Jupyter aficionado, I believe it’s essential to periodically scrutinize alternatives to ensure we’re using the best tools available. Enter Marimo, a reactive Python notebook promising to address Jupyter’s shortcomings. Let’s dive into why you might want to consider it.
