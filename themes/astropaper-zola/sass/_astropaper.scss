@@ -348,6 +348,14 @@ svg.icon-tabler {
   }
 }
 
+/* Bluesky is a solid-silhouette logo, not a stroke/line icon like the rest
+   of the Tabler set -- it must be filled, not stroked, or it renders as a
+   broken dotted outline. */
+svg.icon-tabler.icon-bluesky {
+  fill: currentColor;
+  stroke: none;
+}
+
 /* ===== Footer ===== */
 footer {
   width: 100%;
@@ -402,7 +410,6 @@ footer {
   &:hover {
     transform: rotate(6deg);
     color: skin(--color-accent);
-    svg { fill: skin(--color-accent); }
   }
 
   @media (min-width: 640px) {
