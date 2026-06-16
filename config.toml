@@ -3,6 +3,7 @@ title = "Frequently Bayesian"
 description = "A blog featuring a variety of digital fundamentals ranging from career to code, data to design."
 theme = "astropaper-zola"
 compile_sass = true
+minify_html = true
 build_search_index = true
 generate_feeds = true
 feed_filenames = ["rss.xml"]
@@ -29,7 +30,7 @@ light_and_dark_mode = true
 
 [[extra.social]]
 name = "GitHub"
-href = "https://github.com/valiantone"
+href = "https://github.com/TechLabsGlobal"
 icon = "github"
 
 [[extra.social]]
@@ -39,10 +40,10 @@ icon = "instagram"
 
 [[extra.social]]
 name = "LinkedIn"
-href = "https://www.linkedin.com/in/zubin-john-953b4241/"
+href = "https://www.linkedin.com/company/bifunctional"
 icon = "linkedin"
 
 [[extra.social]]
-name = "Twitter"
-href = "https://twitter.com/zubinj"
-icon = "twitter"
+name = "Bluesky"
+href = "https://bsky.app/profile/bifunctional.bsky.social"
+icon = "bluesky"
