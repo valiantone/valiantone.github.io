@@ -3,7 +3,7 @@ title = "We Built a Digital Twin for the Part of Learning Nobody Has Time For"
 date = 2026-07-15T10:00:00Z
 slug = "stacktwin-nebius-serverless-challenge"
 description = "How StackTwin turns a week's worth of technical noise into a personal learning track with finite Nebius Serverless AI Jobs."
-draft = true
+draft = false
 
 [taxonomies]
 tags = ["NebiusServerlessChallenge", "Serverless AI", "MLOps", "Digital Twin", "Continuous Learning"]
