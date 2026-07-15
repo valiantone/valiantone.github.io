@@ -17,6 +17,7 @@ light_theme = "rose-pine-moon"
 dark_theme = "kanagawa-wave"
 
 [search]
+index_format = "elasticlunr_json"
 include_title = true
 include_description = true
 include_content = true

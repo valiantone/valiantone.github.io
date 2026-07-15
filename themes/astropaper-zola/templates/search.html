@@ -29,15 +29,10 @@
     const resp = await fetch("/search_index.en.json");
     const data = await resp.json();
 
-    const idx = elasticlunr(function() {
-      this.addField("title");
-      this.addField("body");
-      this.setRef("id");
-    });
-
-    data.forEach(doc => {
-      idx.addDoc({ id: doc.id, title: doc.title, body: doc.body });
-    });
+    // Zola emits a pre-built elasticlunr index (index_format = "elasticlunr_json");
+    // load it directly and read documents out of its documentStore.
+    const idx = elasticlunr.Index.load(data);
+    const docs = data.documentStore.docs;
 
     const input = document.getElementById("search-input");
     const resultsEl = document.getElementById("search-results");
@@ -68,11 +63,22 @@
       infoEl.textContent = `Found ${results.length} result${results.length === 1 ? "" : "s"} for '${query}'`;
 
       results.forEach(r => {
-        const doc = data.find(d => d.id === r.ref);
+        const doc = docs[r.ref];
         if (!doc) return;
         const li = document.createElement("li");
         li.className = "card";
-        li.innerHTML = `<a href="${doc.id}" class="card-title"><h2>${doc.title}</h2></a>`;
+        const a = document.createElement("a");
+        a.href = r.ref;
+        a.className = "card-title";
+        const h2 = document.createElement("h2");
+        h2.textContent = doc.title;
+        a.appendChild(h2);
+        li.appendChild(a);
+        if (doc.description) {
+          const p = document.createElement("p");
+          p.textContent = doc.description;
+          li.appendChild(p);
+        }
         resultsEl.appendChild(li);
       });
     }
