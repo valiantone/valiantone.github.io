@@ -16,3 +16,413 @@ $color-card-muted-dark: 0, 77, 58;      // between teal-600 & 800
 $color-border-dark: 0, 99, 77;          // teal-600 #00634d
 
 @import "astropaper";
+
+/* ============================================================
+   Bifunctional brand layer
+   Visual polish on top of AstroPaper: Fraunces display type,
+   brand gradients (pink → mint), card & pill treatments.
+   Colors mirror bifunctional.xyz design tokens.
+   ============================================================ */
+
+:root,
+html[data-theme="light"] {
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --color-accent-2: 0, 99, 77;        /* teal-600 — secondary accent (light) */
+  --gradient-brand: linear-gradient(
+    90deg,
+    rgba(191, 19, 112, 0.9),          /* deep pink */
+    rgba(0, 99, 77, 0.9)              /* teal-600 */
+  );
+}
+
+html[data-theme="dark"] {
+  --color-accent-2: 64, 255, 181;     /* tropical mint — secondary accent (dark) */
+  --gradient-brand: linear-gradient(
+    90deg,
+    rgba(255, 175, 218, 0.9),         /* blush pink */
+    rgba(64, 255, 181, 0.75)          /* tropical mint */
+  );
+}
+
+/* ----- Ambient page-top glow ----- */
+body {
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 22rem;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(55rem 18rem at 10% -4rem, skin-a(--color-accent, 0.07), transparent 65%),
+    radial-gradient(45rem 16rem at 92% -3rem, skin-a(--color-accent-2, 0.09), transparent 65%);
+}
+
+/* ----- Header: sticky, frosted, gradient hairline ----- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background-color: skin-a(--color-fill, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  .container hr {
+    border: 0;
+    height: 2px;
+    background: var(--gradient-brand);
+    opacity: 0.65;
+    border-radius: 999px;
+  }
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: 0.01em;
+
+  @media (min-width: 640px) {
+    font-size: 1.55rem;
+  }
+
+  .logo-mark {
+    width: 2.35rem;
+    height: 2.35rem;
+    border-radius: 0.65rem;
+    border: 1px solid skin-a(--color-border, 0.45);
+    box-shadow: 0 2px 10px skin-a(--color-text-base, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  &:hover .logo-mark {
+    transform: rotate(-6deg) scale(1.05);
+    box-shadow: 0 4px 16px skin-a(--color-accent, 0.35);
+  }
+}
+
+#nav-menu ul li a.active {
+  color: skin(--color-accent);
+  text-decoration-color: skin(--color-accent);
+}
+
+/* Fix: `#nav-menu ul { display: grid }` outranks `.display-none`, leaving the
+   mobile menu permanently expanded — match the ID specificity to restore the
+   hamburger toggle. */
+#nav-menu ul#menu-items.display-none {
+  display: none;
+
+  @media (min-width: 640px) {
+    display: flex !important;
+  }
+}
+
+/* ----- Hero: display type with brand flourish ----- */
+#hero {
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 2.5rem;
+    letter-spacing: 0.01em;
+
+    @media (min-width: 640px) {
+      font-size: 3.5rem;
+    }
+
+    &::after {
+      content: ".";
+      color: skin(--color-accent);
+    }
+  }
+
+  p {
+    max-width: 42rem;
+  }
+}
+
+/* ----- Section headings as brand kickers ----- */
+#featured > h2,
+#recent-posts > h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: skin(--color-accent);
+
+  @media (min-width: 640px) {
+    font-size: 0.9rem;
+  }
+
+  &::before {
+    content: "";
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 999px;
+    background: skin(--color-accent-2);
+    box-shadow: 0 0 0 3px skin-a(--color-accent-2, 0.25);
+    flex-shrink: 0;
+  }
+
+  &::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(90deg, skin-a(--color-accent, 0.45), transparent);
+  }
+}
+
+/* ----- Post cards: real cards with lift ----- */
+.card {
+  position: relative;
+  margin: 1.15rem 0;
+  padding: 1.15rem 1.35rem 1.05rem;
+  border: 1px solid skin-a(--color-border, 0.35);
+  border-radius: 0.9rem;
+  background-color: skin-a(--color-card, 0.28);
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease,
+    background-color 0.25s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--gradient-brand);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  &:hover,
+  &:focus-within {
+    transform: translateY(-3px);
+    border-color: skin-a(--color-accent, 0.55);
+    background-color: skin-a(--color-card, 0.45);
+    box-shadow: 0 12px 30px skin-a(--color-text-base, 0.10),
+      0 2px 8px skin-a(--color-text-base, 0.06);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  p {
+    margin-top: 0.5rem;
+    opacity: 0.88;
+    font-size: 0.95rem;
+  }
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;                 /* whole card is clickable */
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: skin(--color-accent);
+  }
+}
+
+.card-datetime {
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+
+  svg {
+    fill: skin(--color-accent);
+    opacity: 0.85;
+  }
+}
+
+/* ----- Buttons & pagination as brand pills ----- */
+.all-posts-btn-wrapper a,
+.pagination-wrapper a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem 1.35rem;
+  border: 1px solid skin-a(--color-accent, 0.5);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    color: skin(--color-fill);
+    background-color: skin(--color-accent);
+    box-shadow: 0 6px 20px skin-a(--color-accent, 0.35);
+
+    svg {
+      fill: skin(--color-fill);
+    }
+  }
+}
+
+/* ----- Tags as pill chips ----- */
+.tag a {
+  padding: 0.25rem 0.85rem 0.25rem 0.6rem;
+  border: 1px solid skin-a(--color-border, 0.4);
+  border-radius: 999px;
+  background-color: skin-a(--color-card, 0.3);
+  text-decoration: none;
+  font-weight: 500;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    top: 0;
+    border-color: skin-a(--color-accent, 0.6);
+    background-color: skin-a(--color-accent, 0.12);
+  }
+}
+
+.tag.tag-lg a {
+  text-underline-offset: 4px;
+}
+
+/* ----- Listing pages ----- */
+#main-content > h1 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 0.01em;
+
+  @media (min-width: 640px) {
+    font-size: 2rem;
+  }
+}
+
+/* ----- Single post ----- */
+.post-title {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 600;
+  line-height: 1.25;
+
+  @media (min-width: 640px) {
+    font-size: 2.35rem;
+  }
+}
+
+.prose {
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+  }
+
+  h2 {
+    padding-bottom: 0.4rem;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 3rem;
+      height: 2px;
+      margin-top: 0.45rem;
+      border-radius: 999px;
+      background: var(--gradient-brand);
+    }
+  }
+
+  h3 {
+    font-style: italic;
+  }
+
+  blockquote {
+    border-left: 3px solid skin(--color-accent);
+    border-radius: 0 0.75rem 0.75rem 0;
+    background-color: skin-a(--color-card, 0.3);
+    padding: 0.85rem 1.25rem;
+    opacity: 1;
+
+    p {
+      opacity: 0.85;
+    }
+  }
+
+  img {
+    border: 1px solid skin-a(--color-border, 0.5);
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 24px skin-a(--color-text-base, 0.10);
+  }
+
+  table {
+    th {
+      background-color: skin-a(--color-card, 0.45);
+    }
+
+    tr:nth-child(even) td {
+      background-color: skin-a(--color-card, 0.18);
+    }
+  }
+}
+
+/* ----- Search ----- */
+.search-input {
+  border-radius: 999px;
+  padding-left: 2.75rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus {
+    box-shadow: 0 0 0 4px skin-a(--color-accent, 0.18);
+  }
+}
+
+.search-label .search-icon {
+  left: 0.85rem;
+}
+
+/* ----- 404 ----- */
+.not-found-wrapper h1 {
+  font-family: var(--font-display);
+}
+
+/* ----- Footer ----- */
+footer {
+  .container hr {
+    border: 0;
+    height: 2px;
+    background: var(--gradient-brand);
+    opacity: 0.65;
+    border-radius: 999px;
+  }
+
+  .copyright-wrapper {
+    font-size: 0.85rem;
+    opacity: 0.75;
+  }
+}
+
+/* ----- Scrollbar ----- */
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  border: 3px solid skin(--color-fill);
+}
+
+/* ----- Motion safety ----- */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card:hover,
+  .logo .logo-mark,
+  .logo:hover .logo-mark {
+    transition: none;
+    transform: none;
+  }
+}
