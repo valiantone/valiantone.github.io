@@ -18,18 +18,18 @@ $color-border-dark: 0, 99, 77;          // teal-600 #00634d
 @import "astropaper";
 
 /* ============================================================
-   Bifunctional brand layer — modern editorial edition
+   Bifunctional brand layer — modern editorial archive
    Minimal magazine chrome with a retro-tech institutional
-   accent (NASA worm / ESA / console-era publishing): Archivo
-   Expanded display over a typewriter mono body, gradient
-   hairline dividers, uppercase micro-labels, end slugs. The
-   blinking hero cursor and dark-mode scanlines stay as the
-   deliberate anachronism. Colors mirror bifunctional.xyz.
+   accent (NASA / ESA / console-era publishing): Cormorant
+   Garamond display (shared with bifunctional.xyz) over a
+   typewriter mono body, gradient hairline dividers, uppercase
+   micro-labels, end slugs. The blinking hero cursor and
+   dark-mode scanlines stay as the deliberate anachronism.
    ============================================================ */
 
 :root,
 html[data-theme="light"] {
-  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --color-accent-2: 0, 99, 77;        /* teal-600 — secondary accent (light) */
   --gradient-brand: linear-gradient(
     90deg,
@@ -84,14 +84,13 @@ header {
   align-items: center;
   gap: 0.65rem;
   font-family: var(--font-display);
-  font-stretch: 125%;
-  font-weight: 800;
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
 
   @media (min-width: 640px) {
-    font-size: 1.15rem;
+    font-size: 1.35rem;
   }
 
   .logo-mark {
@@ -131,13 +130,12 @@ header {
 #hero {
   h2 {
     font-family: var(--font-display);
-    font-stretch: 125%;
-    font-weight: 750;
-    font-size: 2.25rem;
-    line-height: 1.1;
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 1.05;
 
     @media (min-width: 640px) {
-      font-size: 3rem;
+      font-size: 3.9rem;
     }
 
     &::before {
@@ -164,14 +162,13 @@ html[data-theme="dark"] #hero h2 {
   align-items: center;
   gap: 0.9rem;
   font-family: var(--font-display);
-  font-stretch: 125%;
-  font-size: 0.72rem;
-  font-weight: 650;
+  font-size: 0.9rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.24em;
 
   @media (min-width: 640px) {
-    font-size: 0.78rem;
+    font-size: 0.95rem;
   }
 
   &::after {
@@ -225,10 +222,9 @@ html[data-theme="dark"] #hero h2 {
 
 .card-title {
   font-family: var(--font-display);
-  font-stretch: 118%;
-  font-size: 1.2rem;
-  font-weight: 680;
-  line-height: 1.3;
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1.2;
 
   &::after {
     content: "";
@@ -265,11 +261,10 @@ html[data-theme="dark"] #hero h2 {
   border: 1px solid skin-a(--color-text-base, 0.7);
   border-radius: 999px;
   font-family: var(--font-display);
-  font-stretch: 125%;
-  font-weight: 650;
-  font-size: 0.72rem;
+  font-weight: 700;
+  font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 
   &:hover {
@@ -286,41 +281,37 @@ html[data-theme="dark"] #hero h2 {
 /* ----- Listing pages ----- */
 #main-content > h1 {
   font-family: var(--font-display);
-  font-stretch: 122%;
-  font-size: 1.6rem;
-  font-weight: 720;
+  font-size: 2rem;
+  font-weight: 600;
 
   @media (min-width: 640px) {
-    font-size: 1.9rem;
+    font-size: 2.4rem;
   }
 }
 
 /* ----- Single post ----- */
 .post-title {
   font-family: var(--font-display);
-  font-stretch: 118%;
-  font-size: 1.7rem;
-  font-weight: 720;
-  line-height: 1.2;
+  font-size: 2.15rem;
+  font-weight: 600;
+  line-height: 1.15;
 
   @media (min-width: 640px) {
-    font-size: 2.1rem;
+    font-size: 2.65rem;
   }
 }
 
 .prose {
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    font-stretch: 118%;
-    font-weight: 680;
-    font-style: normal;
-    line-height: 1.25;
+    font-weight: 600;
+    line-height: 1.2;
   }
 
-  h1 { font-size: 1.65rem; }
-  h2 { font-size: 1.35rem; }
-  h3 { font-size: 1.15rem; }
-  h4 { font-size: 1rem; }
+  h1 { font-size: 2.1rem; }
+  h2 { font-size: 1.7rem; }
+  h3 { font-size: 1.4rem; font-style: italic; }
+  h4 { font-size: 1.2rem; }
 
   /* Gradient kicker rule under section headings */
   h2::after {
@@ -342,11 +333,10 @@ html[data-theme="dark"] #hero h2 {
     margin: 1.5rem 0;
     opacity: 1;
     font-family: var(--font-display);
-    font-stretch: 110%;
-    font-style: normal;
-    font-weight: 520;
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.35rem;
+    line-height: 1.5;
 
     p {
       opacity: 0.9;
@@ -365,8 +355,8 @@ html[data-theme="dark"] #hero h2 {
   table {
     th {
       font-family: var(--font-display);
-      font-stretch: 118%;
-      font-weight: 680;
+      font-weight: 700;
+      font-size: 1.05rem;
       background-color: skin-a(--color-card, 0.45);
     }
 
@@ -402,8 +392,7 @@ html[data-theme="dark"] #hero h2 {
 /* ----- 404 ----- */
 .not-found-wrapper h1 {
   font-family: var(--font-display);
-  font-stretch: 125%;
-  font-weight: 750;
+  font-weight: 600;
 }
 
 /* ----- Footer: mirror the masthead hairline ----- */
