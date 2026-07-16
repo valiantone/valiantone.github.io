@@ -18,22 +18,33 @@ $color-border-dark: 0, 99, 77;          // teal-600 #00634d
 @import "astropaper";
 
 /* ============================================================
-   Bifunctional brand layer — scholarly print edition
-   Old Standard TT display over a typewriter mono body: Oxford
-   rules, section marks, drop caps, serif italic quotes, a QED
-   tombstone closing each article. The blinking hero cursor and
-   dark-mode scanlines stay as the deliberate anachronism.
-   Colors mirror bifunctional.xyz design tokens.
+   Bifunctional brand layer — modern editorial edition
+   Minimal magazine chrome with a retro-tech institutional
+   accent (NASA worm / ESA / console-era publishing): Archivo
+   Expanded display over a typewriter mono body, gradient
+   hairline dividers, uppercase micro-labels, end slugs. The
+   blinking hero cursor and dark-mode scanlines stay as the
+   deliberate anachronism. Colors mirror bifunctional.xyz.
    ============================================================ */
 
 :root,
 html[data-theme="light"] {
-  --font-display: "Old Standard TT", Georgia, "Times New Roman", serif;
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --color-accent-2: 0, 99, 77;        /* teal-600 — secondary accent (light) */
+  --gradient-brand: linear-gradient(
+    90deg,
+    rgba(191, 19, 112, 0.9),          /* deep pink */
+    rgba(0, 99, 77, 0.9)              /* teal-600 */
+  );
 }
 
 html[data-theme="dark"] {
   --color-accent-2: 64, 255, 181;     /* tropical mint — phosphor accent (dark) */
+  --gradient-brand: linear-gradient(
+    90deg,
+    rgba(255, 175, 218, 0.9),         /* blush pink */
+    rgba(64, 255, 181, 0.75)          /* tropical mint */
+  );
 }
 
 /* ----- CRT scanlines: dark mode only, deliberately faint ----- */
@@ -52,7 +63,7 @@ html[data-theme="dark"] body::after {
   );
 }
 
-/* ----- Header: solid, sticky, Oxford rule (thick over thin) ----- */
+/* ----- Header: solid, sticky, gradient hairline ----- */
 header {
   position: sticky;
   top: 0;
@@ -61,29 +72,32 @@ header {
 
   .container hr {
     border: 0;
-    height: 3px;
-    border-top: 2px solid skin-a(--color-text-base, 0.75);
-    border-bottom: 1px solid skin-a(--color-text-base, 0.75);
+    height: 2px;
+    background: var(--gradient-brand);
+    border-radius: 999px;
+    opacity: 0.75;
   }
 }
 
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.35rem;
-  letter-spacing: 0.01em;
+  font-stretch: 125%;
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 
   @media (min-width: 640px) {
-    font-size: 1.55rem;
+    font-size: 1.15rem;
   }
 
   .logo-mark {
     width: 2.25rem;
     height: 2.25rem;
-    border-radius: 2px;
+    border-radius: 6px;
     border: 1px solid skin-a(--color-border, 0.6);
   }
 
@@ -108,7 +122,7 @@ header {
   }
 }
 
-/* ----- Hero: prompt with a blinking block cursor ----- */
+/* ----- Hero: expanded wordmark with a blinking block cursor ----- */
 @keyframes cursor-blink {
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0; }
@@ -117,12 +131,13 @@ header {
 #hero {
   h2 {
     font-family: var(--font-display);
-    font-weight: 400;
-    font-size: 2.5rem;
-    letter-spacing: 0.01em;
+    font-stretch: 125%;
+    font-weight: 750;
+    font-size: 2.25rem;
+    line-height: 1.1;
 
     @media (min-width: 640px) {
-      font-size: 3.25rem;
+      font-size: 3rem;
     }
 
     &::before {
@@ -142,73 +157,78 @@ html[data-theme="dark"] #hero h2 {
   text-shadow: 0 0 12px skin-a(--color-accent-2, 0.35);
 }
 
-/* ----- Section headings: labeled rules, ledger style ----- */
+/* ----- Section labels: uppercase micro-kicker, gradient rule ----- */
 #featured > h2,
 #recent-posts > h2 {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.9rem;
   font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-stretch: 125%;
+  font-size: 0.72rem;
+  font-weight: 650;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
 
   @media (min-width: 640px) {
-    font-size: 0.9rem;
-  }
-
-  &::before {
-    content: "\00A7";              /* section sign § */
-    font-weight: 400;
-    font-size: 1.1em;
-    color: skin(--color-accent-2);
-    flex-shrink: 0;
+    font-size: 0.78rem;
   }
 
   &::after {
     content: "";
-    height: 0;
+    height: 2px;
     flex: 1;
-    border-top: 1px dashed skin-a(--color-text-base, 0.35);
+    border-radius: 999px;
+    background: linear-gradient(90deg, skin-a(--color-accent, 0.55), skin-a(--color-accent-2, 0.35), transparent);
   }
 }
 
-/* ----- Post cards: index cards, not glass ----- */
+/* ----- Post cards: hairline surfaces, gradient edge on hover ----- */
 .card {
   position: relative;
   margin: 1.15rem 0;
-  padding: 1rem 1.25rem 0.95rem;
-  border: 1px solid skin-a(--color-border, 0.45);
-  border-radius: 2px;
-  background-color: skin-a(--color-card, 0.22);
+  padding: 1.05rem 1.3rem 1rem;
+  border: 1px solid skin-a(--color-border, 0.35);
+  border-radius: 6px;
+  background-color: transparent;
+  overflow: hidden;
   transition: border-color 0.15s ease, background-color 0.15s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--gradient-brand);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
 
   &:hover,
   &:focus-within {
-    border-color: skin(--color-accent);
-    background-color: skin-a(--color-card, 0.4);
+    border-color: skin-a(--color-accent, 0.55);
+    background-color: skin-a(--color-card, 0.25);
 
-    .card-title {
-      text-decoration: underline;
-      text-decoration-style: dashed;
-      text-underline-offset: 4px;
+    &::before {
+      opacity: 1;
     }
   }
 
   p {
     margin-top: 0.5rem;
-    opacity: 0.88;
+    opacity: 0.85;
     font-size: 0.95rem;
   }
 }
 
 .card-title {
   font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  line-height: 1.35;
+  font-stretch: 118%;
+  font-size: 1.2rem;
+  font-weight: 680;
+  line-height: 1.3;
 
   &::after {
     content: "";
@@ -221,35 +241,41 @@ html[data-theme="dark"] #hero h2 {
   }
 }
 
+/* ----- Dates: minimal uppercase label, no icon ----- */
 .card-datetime {
-  margin-top: 0.15rem;
-  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  font-size: 0.7rem;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  opacity: 0.6;
 
   svg {
-    fill: skin(--color-accent);
-    opacity: 0.85;
+    display: none;
   }
 }
 
-/* ----- Buttons & pagination: bracketed keys, inverted hover ----- */
+/* ----- Buttons & pagination: expanded-caps pills, inverted hover ----- */
 .all-posts-btn-wrapper a,
 .pagination-wrapper a {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.5rem 1.15rem;
-  border: 1px solid skin(--color-text-base);
-  border-radius: 2px;
+  padding: 0.5rem 1.3rem;
+  border: 1px solid skin-a(--color-text-base, 0.7);
+  border-radius: 999px;
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.85rem;
+  font-stretch: 125%;
+  font-weight: 650;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  letter-spacing: 0.12em;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 
   &:hover {
     color: skin(--color-fill);
     background-color: skin(--color-text-base);
+    border-color: skin(--color-text-base);
 
     svg {
       fill: skin(--color-fill);
@@ -260,59 +286,70 @@ html[data-theme="dark"] #hero h2 {
 /* ----- Listing pages ----- */
 #main-content > h1 {
   font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 400;
+  font-stretch: 122%;
+  font-size: 1.6rem;
+  font-weight: 720;
 
   @media (min-width: 640px) {
-    font-size: 2.1rem;
+    font-size: 1.9rem;
   }
 }
 
 /* ----- Single post ----- */
 .post-title {
   font-family: var(--font-display);
-  font-size: 1.9rem;
-  font-weight: 400;
-  line-height: 1.3;
+  font-stretch: 118%;
+  font-size: 1.7rem;
+  font-weight: 720;
+  line-height: 1.2;
 
   @media (min-width: 640px) {
-    font-size: 2.35rem;
+    font-size: 2.1rem;
   }
 }
 
 .prose {
-  /* Old Standard TT has true 400/700 and a real italic, so the
-     theme's italic h3 stands; just swap the family, ease the 600
-     weight to 400, and size for a compact book serif. */
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    font-weight: 400;
-    line-height: 1.35;
+    font-stretch: 118%;
+    font-weight: 680;
+    font-style: normal;
+    line-height: 1.25;
   }
 
-  h1 { font-size: 1.9rem; }
-  h2 { font-size: 1.5rem; }
-  h3 { font-size: 1.25rem; }
-  h4 { font-size: 1.1rem; }
+  h1 { font-size: 1.65rem; }
+  h2 { font-size: 1.35rem; }
+  h3 { font-size: 1.15rem; }
+  h4 { font-size: 1rem; }
 
-  h2 {
-    padding-bottom: 0.45rem;
-    border-bottom: 1px dashed skin-a(--color-text-base, 0.4);
+  /* Gradient kicker rule under section headings */
+  h2::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 2px;
+    margin-top: 0.5rem;
+    border-radius: 999px;
+    background: var(--gradient-brand);
   }
 
-  /* Pull quotes set in the display face's true italic */
+  /* Pull quotes: bold editorial callout on a gradient edge */
   blockquote {
-    border-left: 3px solid skin(--color-accent);
-    background-color: skin-a(--color-card, 0.3);
-    padding: 0.85rem 1.25rem;
+    border-left: 3px solid transparent;
+    border-image: var(--gradient-brand) 1;
+    background-color: transparent;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    margin: 1.5rem 0;
     opacity: 1;
     font-family: var(--font-display);
-    font-style: italic;
+    font-stretch: 110%;
+    font-style: normal;
+    font-weight: 520;
     font-size: 1.1rem;
     line-height: 1.6;
 
     p {
-      opacity: 0.85;
+      opacity: 0.9;
     }
 
     code, pre {
@@ -320,26 +357,16 @@ html[data-theme="dark"] #hero h2 {
     }
   }
 
-  /* Drop cap opening each article */
-  > p:first-of-type::first-letter {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 3.3em;
-    line-height: 0.85;
-    float: left;
-    padding: 0.04em 0.12em 0 0;
-    color: skin(--color-accent);
-  }
-
   img {
-    border: 1px solid skin-a(--color-border, 0.6);
-    border-radius: 2px;
+    border: 1px solid skin-a(--color-border, 0.4);
+    border-radius: 6px;
   }
 
   table {
     th {
       font-family: var(--font-display);
-      font-weight: 700;
+      font-stretch: 118%;
+      font-weight: 680;
       background-color: skin-a(--color-card, 0.45);
     }
 
@@ -348,20 +375,17 @@ html[data-theme="dark"] #hero h2 {
     }
   }
 
-  /* QED tombstone closing every article */
-  &::after {
-    content: "\220E";
-    display: block;
-    margin-top: 2.5rem;
-    text-align: center;
-    font-size: 1.15rem;
+  /* Magazine end slug on the final paragraph */
+  > p:last-of-type::after {
+    content: "\00A0\25A0";           /* ■ */
+    font-size: 0.75em;
     color: skin(--color-accent-2);
   }
 }
 
 /* ----- Search ----- */
 .search-input {
-  border-radius: 2px;
+  border-radius: 999px;
   padding-left: 2.75rem;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 
@@ -378,15 +402,18 @@ html[data-theme="dark"] #hero h2 {
 /* ----- 404 ----- */
 .not-found-wrapper h1 {
   font-family: var(--font-display);
+  font-stretch: 125%;
+  font-weight: 750;
 }
 
-/* ----- Footer: inverted Oxford rule (thin over thick) ----- */
+/* ----- Footer: mirror the masthead hairline ----- */
 footer {
   .container hr {
     border: 0;
-    height: 3px;
-    border-top: 1px solid skin-a(--color-text-base, 0.75);
-    border-bottom: 2px solid skin-a(--color-text-base, 0.75);
+    height: 2px;
+    background: var(--gradient-brand);
+    border-radius: 999px;
+    opacity: 0.75;
   }
 
   .copyright-wrapper {
@@ -397,7 +424,7 @@ footer {
 
 /* ----- Scrollbar ----- */
 ::-webkit-scrollbar-thumb {
-  border-radius: 0;
+  border-radius: 999px;
   border: 3px solid skin(--color-fill);
 }
 
