@@ -109,14 +109,14 @@ hr {
 /* ===== Layout ===== */
 .container {
   width: 100%;
-  max-width: 48rem;
+  max-width: 56rem;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
 section,
 footer .container {
-  max-width: 48rem;
+  max-width: 56rem;
   margin: 0 auto;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -144,7 +144,7 @@ header {
 }
 
 .nav-container {
-  max-width: 48rem;
+  max-width: 56rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -559,7 +559,7 @@ footer {
 
 /* ===== Breadcrumbs ===== */
 .breadcrumb {
-  max-width: 48rem;
+  max-width: 56rem;
   margin: 1.25rem auto 0.25rem;
   padding: 0 1rem;
   text-align: left;
@@ -580,7 +580,7 @@ footer {
 
 /* ===== Main Content ===== */
 #main-content {
-  max-width: 48rem;
+  max-width: 56rem;
   margin: 0 auto;
   width: 100%;
   padding: 0 1rem 2rem;
@@ -801,7 +801,7 @@ footer {
 
 /* ===== Prose (Article Content) ===== */
 .prose {
-  max-width: 48rem;
+  max-width: 56rem;
   margin: 1.25rem auto;
   font-size: 1rem;
   line-height: 1.75;
